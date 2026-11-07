@@ -19,22 +19,22 @@
 }
 
 /* ───────────────────────────────────────────────────────────────────────────
-   1. SIDEBAR ROW TACTILE ACTIVE STATE
+   1. SIDEBAR ROW TACTILE ACTIVE STATE (B2 Balanced: 2.5px Lip + 1.25px Optical Lift)
    ─────────────────────────────────────────────────────────────────────────── */
 body.theme-light {
   --nav-active-shadow:
-    inset 0px 1px 0px 0px rgba(255, 255, 255, 0.85),
-    inset 0px 0px 0px 1px rgba(67, 46, 20, 0.11),
-    inset 0px -2px 0px 1px rgba(67, 46, 20, 0.08),
+    inset 0px 1px 0px 0px rgba(255, 255, 255, 0.90),
+    inset 0px -2.5px 0px 0px #DFD3C3,
+    inset 0px 0px 0px 1px rgba(67, 46, 20, 0.12),
     0px 2px 3px 0px rgba(67, 46, 20, 0.06);
 }
 
 body.theme-dark {
   --nav-active-shadow:
-    inset 0px 1px 0px 0px rgba(235, 218, 198, 0.08),
-    inset 0px 0px 0px 1px rgba(0, 0, 0, 0.35),
-    inset 0px -2px 0px 1px rgba(0, 0, 0, 0.28),
-    0px 2px 4px 0px rgba(0, 0, 0, 0.26);
+    inset 0px 1px 0px 0px rgba(235, 218, 198, 0.09),
+    inset 0px -2.5px 0px 0px #221B15,
+    inset 0px 0px 0px 1px rgba(0, 0, 0, 0.38),
+    0px 2px 4px 0px rgba(0, 0, 0, 0.24);
 }
 
 body[data-agy-theme] :is(.agy-sidebar-row, [data-testid="conversation-row-history"]) {
@@ -51,6 +51,11 @@ body[data-agy-theme] [data-testid="conversation-row-history"][data-selected="tru
   background-color: var(--onyx-selected) !important;
   --row-bg: var(--onyx-selected) !important;
   box-shadow: var(--nav-active-shadow) !important;
+}
+
+/* Lift text/timestamp & action icons inside selected sidebar row by 1.25px to center on top face */
+body[data-agy-theme] :is(.agy-sidebar-row, [data-testid="conversation-row-history"])[data-selected="true"] > div {
+  transform: translateY(-1.25px);
 }
 
 /* ───────────────────────────────────────────────────────────────────────────
@@ -176,8 +181,8 @@ body[data-agy-theme] [data-testid="conversation-list-sidebar"] :is(
 
 [data-testid="conversation-list-sidebar"] .agy-sidebar-row[data-selected="true"]::before {
   opacity: 1;
-  top: 15%;
-  bottom: 15%;
+  top: 14%;
+  bottom: 23%;
   width: 3.5px;
 }
 
@@ -298,11 +303,15 @@ body[data-agy-theme][data-newux-theme] button[data-testid^="settings-nav-item-"]
   background-color: var(--settings-nav-color, var(--primary)) !important;
   color: #FCFAF8 !important;
   box-shadow:
-    inset 0px 1px 0px 0px rgba(255, 255, 255, 0.26),
+    inset 0px 1px 0px 0px rgba(255, 255, 255, 0.28),
+    inset 0px -2.5px 0px 0px rgba(0, 0, 0, 0.26),
     inset 0px 0px 0px 1px rgba(0, 0, 0, 0.18),
-    inset 0px -3px 0px 0px rgba(0, 0, 0, 0.25),
-    inset 0px -2px 4px 0px rgba(0, 0, 0, 0.18),
     0px 2px 4px -1px rgba(0, 0, 0, 0.18) !important;
+}
+
+body[data-agy-theme] button[data-testid^="settings-nav-item-"].bg-sidebar-secondary > * {
+  transform: translateY(-1.25px);
+  transition: transform 80ms ease;
 }
 
 body[data-agy-theme] button[data-testid^="settings-nav-item-"].bg-sidebar-secondary :is(span, svg, .google-symbols) {
@@ -314,6 +323,10 @@ body[data-agy-theme] button[data-testid^="settings-nav-item-"].bg-sidebar-second
 body[data-agy-theme] button[data-testid^="settings-nav-item-"]:active {
   transform: translateY(1px) !important;
   box-shadow: var(--primary-btn-shadow-active) !important;
+}
+
+body[data-agy-theme] button[data-testid^="settings-nav-item-"]:active > * {
+  transform: translateY(0px) !important;
 }
 
 /* ───────────────────────────────────────────────────────────────────────────
