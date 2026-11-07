@@ -4,7 +4,7 @@
  * Original Obsidian Theme by Cecilia May (https://github.com/primary-theme/obsidian)
  * Preset: Bauhaus Red (Light #BF3F36) / Bauhaus Yellow (Dark #F4B943)
  * Rainbow Sidebar: Enabled (6-Color Bauhaus Cycle)
- * Built: 2026-11-07T08:34:34.225Z
+ * Built: 2026-11-07T09:02:51.672Z
  * ═══════════════════════════════════════════════════════════════════════════
  */
 
@@ -614,9 +614,9 @@ body[data-agy-theme] :is(
   .agy-button-md,
   .agy-button-lg,
   :is(button, a)[class*="bg-primary"],
-  :is(button, a)[class*="bg-secondary"]:not([role="switch"]),
+  :is(button, a)[class*="bg-secondary"]:not([role="switch"]):not([data-slot="toggle-group"] *),
   button.proceed-button
-):not([class*="rounded-none"]):not([class*="rounded-full"]) {
+):not([class*="rounded-none"]):not([class*="rounded-full"]):not([data-slot="toggle-group"] *) {
   border-radius: var(--button-radius) !important;
   transition: transform 90ms ease, box-shadow 120ms ease, background-color 120ms ease, filter 120ms ease !important;
 }
@@ -635,42 +635,42 @@ body[data-agy-theme] a:is([class*="bg-primary"], [class*="bg-secondary"]):not(.a
 body[data-agy-theme] :is(
   button.surface-opaque,
   :is(button, a).agy-button[class*="bg-"],
-  :is(button, a)[class*="bg-secondary"]:not([role="switch"]),
+  :is(button, a)[class*="bg-secondary"]:not([role="switch"]):not([data-slot="toggle-group"] *),
   .agy-button-xs[class*="bg-"],
   .agy-button-sm[class*="bg-"],
   .agy-button-md[class*="bg-"],
   .agy-button-lg[class*="bg-"],
   .agy-select-trigger,
   [data-testid="empty-file-open-button"]
-):not([class*="bg-transparent"]):not([class*="bg-primary"]):not([role="switch"]):not(:disabled) {
+):not([class*="bg-transparent"]):not([class*="bg-primary"]):not([role="switch"]):not([data-slot="toggle-group"] *):not(:disabled) {
   box-shadow: var(--primary-btn-shadow) !important;
 }
 
 body[data-agy-theme] :is(
   button.surface-opaque,
   :is(button, a).agy-button[class*="bg-"],
-  :is(button, a)[class*="bg-secondary"]:not([role="switch"]),
+  :is(button, a)[class*="bg-secondary"]:not([role="switch"]):not([data-slot="toggle-group"] *),
   .agy-button-xs[class*="bg-"],
   .agy-button-sm[class*="bg-"],
   .agy-button-md[class*="bg-"],
   .agy-button-lg[class*="bg-"],
   .agy-select-trigger,
   [data-testid="empty-file-open-button"]
-):not([class*="bg-transparent"]):not([class*="bg-primary"]):not([role="switch"]):not(:disabled):hover {
+):not([class*="bg-transparent"]):not([class*="bg-primary"]):not([role="switch"]):not([data-slot="toggle-group"] *):not(:disabled):hover {
   box-shadow: var(--primary-btn-shadow-hover) !important;
 }
 
 body[data-agy-theme] :is(
   button.surface-opaque,
   :is(button, a).agy-button[class*="bg-"],
-  :is(button, a)[class*="bg-secondary"]:not([role="switch"]),
+  :is(button, a)[class*="bg-secondary"]:not([role="switch"]):not([data-slot="toggle-group"] *),
   .agy-button-xs[class*="bg-"],
   .agy-button-sm[class*="bg-"],
   .agy-button-md[class*="bg-"],
   .agy-button-lg[class*="bg-"],
   .agy-select-trigger,
   [data-testid="empty-file-open-button"]
-):not([class*="bg-transparent"]):not([class*="bg-primary"]):not([role="switch"]):not(:disabled):active {
+):not([class*="bg-transparent"]):not([class*="bg-primary"]):not([role="switch"]):not([data-slot="toggle-group"] *):not(:disabled):active {
   box-shadow: var(--primary-btn-shadow-active) !important;
   transform: translateY(1px) !important;
 }
@@ -819,7 +819,7 @@ body[data-agy-theme] :is(
 body[data-agy-theme] :is(
   button.surface-opaque,
   :is(button, a).agy-button[class*="bg-"],
-  :is(button, a)[class*="bg-secondary"]:not([role="switch"]),
+  :is(button, a)[class*="bg-secondary"]:not([role="switch"]):not([data-slot="toggle-group"] *),
   .agy-button-xs[class*="bg-"],
   .agy-button-sm[class*="bg-"],
   .agy-button-md[class*="bg-"],
@@ -827,7 +827,7 @@ body[data-agy-theme] :is(
   .agy-select-trigger,
   :is(button, a)[class*="bg-primary"]:not([role="switch"]):not(.agy-send-button),
   button.proceed-button
-):not([class*="bg-transparent"]):not([role="switch"]):not(:disabled) > * {
+):not([class*="bg-transparent"]):not([role="switch"]):not([data-slot="toggle-group"] *):not(:disabled) > * {
   transform: translateY(-1px);
   transition: transform 80ms ease;
 }
@@ -835,7 +835,7 @@ body[data-agy-theme] :is(
 body[data-agy-theme] :is(
   button.surface-opaque,
   :is(button, a).agy-button[class*="bg-"],
-  :is(button, a)[class*="bg-secondary"]:not([role="switch"]),
+  :is(button, a)[class*="bg-secondary"]:not([role="switch"]):not([data-slot="toggle-group"] *),
   .agy-button-xs[class*="bg-"],
   .agy-button-sm[class*="bg-"],
   .agy-button-md[class*="bg-"],
@@ -843,7 +843,7 @@ body[data-agy-theme] :is(
   .agy-select-trigger,
   :is(button, a)[class*="bg-primary"]:not([role="switch"]):not(.agy-send-button),
   button.proceed-button
-):not([class*="bg-transparent"]):not([role="switch"]):not(:disabled):active > * {
+):not([class*="bg-transparent"]):not([role="switch"]):not([data-slot="toggle-group"] *):not(:disabled):active > * {
   transform: translateY(0px);
 }
 
@@ -868,15 +868,73 @@ body[data-agy-theme][data-newux-theme="onyx"] .surface-composer:focus-within > .
     0 0 0 2px var(--focus-ring-color) !important;
 }
 
-body[data-agy-theme][data-newux-theme] :is(input.agy-field, .agy-field) {
+/* Search Boxes, Text Fields & Inputs: Sunken recessed well with soft inner shadow (never protruding) */
+body.theme-light[data-agy-theme] :is(
+  input.agy-field,
+  .agy-field,
+  input[type="search"],
+  :is(div, form):has(> input[type="search"]),
+  :is(div, form):has(> input[placeholder*="Search"]),
+  :is(div, form):has(> input[placeholder*="搜索"]),
+  div.rounded-lg.bg-muted.border:has(> input)
+) {
   border-radius: var(--button-radius) !important;
-  box-shadow: var(--primary-btn-shadow) !important;
-  background-color: var(--secondary) !important;
+  background-color: var(--color-l-gray-30, #F2ECE3) !important;
+  border-color: var(--color-l-gray-60, #E4D7C3) !important;
+  box-shadow:
+    inset 0 2px 4px rgba(67, 46, 20, 0.16),
+    inset 0 0 0 1px rgba(67, 46, 20, 0.08),
+    0 1px 0 rgba(255, 255, 255, 0.65) !important;
 }
 
-body[data-agy-theme][data-newux-theme] :is(input.agy-field, .agy-field, textarea.agy-textarea):focus {
-  background-color: var(--card) !important;
-  box-shadow: var(--primary-btn-shadow-active) !important;
+body.theme-dark[data-agy-theme] :is(
+  input.agy-field,
+  .agy-field,
+  input[type="search"],
+  :is(div, form):has(> input[type="search"]),
+  :is(div, form):has(> input[placeholder*="Search"]),
+  :is(div, form):has(> input[placeholder*="搜索"]),
+  div.rounded-lg.bg-muted.border:has(> input)
+) {
+  border-radius: var(--button-radius) !important;
+  background-color: var(--color-d-gray-120, #181512) !important;
+  border-color: var(--color-d-gray-80, #383028) !important;
+  box-shadow:
+    inset 0 2px 5px rgba(0, 0, 0, 0.45),
+    inset 0 0 0 1px rgba(0, 0, 0, 0.35),
+    0 1px 0 rgba(255, 255, 255, 0.06) !important;
+}
+
+body.theme-light[data-agy-theme] :is(
+  input.agy-field,
+  .agy-field,
+  input[type="search"],
+  :is(div, form):has(> input[type="search"]),
+  :is(div, form):has(> input[placeholder*="Search"]),
+  :is(div, form):has(> input[placeholder*="搜索"]),
+  div.rounded-lg.bg-muted.border:has(> input)
+):is(:focus, :focus-within) {
+  border-color: var(--primary) !important;
+  box-shadow:
+    inset 0 2px 4px rgba(67, 46, 20, 0.20),
+    inset 0 0 0 1.5px var(--primary),
+    0 1px 0 rgba(255, 255, 255, 0.65) !important;
+}
+
+body.theme-dark[data-agy-theme] :is(
+  input.agy-field,
+  .agy-field,
+  input[type="search"],
+  :is(div, form):has(> input[type="search"]),
+  :is(div, form):has(> input[placeholder*="Search"]),
+  :is(div, form):has(> input[placeholder*="搜索"]),
+  div.rounded-lg.bg-muted.border:has(> input)
+):is(:focus, :focus-within) {
+  border-color: var(--primary) !important;
+  box-shadow:
+    inset 0 2px 5px rgba(0, 0, 0, 0.55),
+    inset 0 0 0 1.5px var(--primary),
+    0 1px 0 rgba(255, 255, 255, 0.08) !important;
 }
 
 /* ───────────────────────────────────────────────────────────────────────────
@@ -971,16 +1029,52 @@ body.theme-dark[data-agy-theme] [role="switch"] > span {
     0 2px 4px rgba(0, 0, 0, 0.45) !important;
 }
 
-body[data-agy-theme][data-newux-theme="onyx"] [data-slot="toggle-group"] {
-  background-color: var(--onyx-well) !important;
+/* Segmented Controls & Toggle Groups ([data-slot="toggle-group"]) */
+body[data-agy-theme] [data-slot="toggle-group"] {
+  background-color: var(--onyx-well, var(--secondary)) !important;
   box-shadow: var(--primary-toggle-shadow) !important;
   border-radius: 10px !important;
+  border: 1px solid var(--border) !important;
+  padding: 2px !important;
 }
 
-body[data-agy-theme][data-newux-theme="onyx"] [data-slot="toggle-group"] > button[data-pressed] {
-  background-color: var(--onyx-key) !important;
+/* Unselected options in toggle groups: completely flat, NO 3D button shadow */
+body[data-agy-theme] [data-slot="toggle-group"] > button:not([data-pressed]):not([aria-pressed="true"]):not([data-state="on"]) {
+  background-color: transparent !important;
+  box-shadow: none !important;
+  transform: none !important;
+  border-radius: 6px !important;
+}
+
+body[data-agy-theme] [data-slot="toggle-group"] > button:not([data-pressed]):not([aria-pressed="true"]):not([data-state="on"]):hover {
+  background-color: rgba(67, 46, 20, 0.06) !important;
+  box-shadow: none !important;
+  transform: none !important;
+}
+
+body[data-agy-theme] [data-slot="toggle-group"] > button:not([data-pressed]):not([aria-pressed="true"]):not([data-state="on"]):active {
+  background-color: rgba(67, 46, 20, 0.10) !important;
+  box-shadow: none !important;
+  transform: none !important;
+}
+
+body[data-agy-theme] [data-slot="toggle-group"] > button:not([data-pressed]):not([aria-pressed="true"]):not([data-state="on"]) > * {
+  transform: none !important;
+}
+
+/* Selected option: 3D tactile keycap button */
+body.theme-light[data-agy-theme] [data-slot="toggle-group"] > button:is([data-pressed], [aria-pressed="true"], [data-state="on"]) {
+  background-color: #FCFAF8 !important;
   box-shadow: var(--primary-btn-shadow) !important;
-  border-radius: 8px !important;
+  border-radius: 6px !important;
+  transform: none !important;
+}
+
+body.theme-dark[data-agy-theme] [data-slot="toggle-group"] > button:is([data-pressed], [aria-pressed="true"], [data-state="on"]) {
+  background-color: var(--color-d-gray-100) !important;
+  box-shadow: var(--primary-btn-shadow) !important;
+  border-radius: 6px !important;
+  transform: none !important;
 }
 
 /* ───────────────────────────────────────────────────────────────────────────
@@ -1035,13 +1129,30 @@ body[data-agy-theme][data-newux-theme] [role="switch"]:focus-visible {
 }
 
 /* 6. Inputs, Textareas & Focus-Within Containers */
-body[data-agy-theme][data-newux-theme] :is(
+body.theme-light[data-agy-theme] :is(
   input:not([type="checkbox"]):not([type="radio"]),
   select,
   textarea,
   .focus-within-ring:focus-within:not(.no-focus-ring)
 ):focus-visible {
-  box-shadow: var(--primary-btn-shadow-hover) !important;
+  border-color: var(--primary) !important;
+  box-shadow:
+    inset 0 2px 4px rgba(67, 46, 20, 0.20),
+    inset 0 0 0 1.5px var(--primary),
+    0 1px 0 rgba(255, 255, 255, 0.65) !important;
+}
+
+body.theme-dark[data-agy-theme] :is(
+  input:not([type="checkbox"]):not([type="radio"]),
+  select,
+  textarea,
+  .focus-within-ring:focus-within:not(.no-focus-ring)
+):focus-visible {
+  border-color: var(--primary) !important;
+  box-shadow:
+    inset 0 2px 5px rgba(0, 0, 0, 0.55),
+    inset 0 0 0 1.5px var(--primary),
+    0 1px 0 rgba(255, 255, 255, 0.08) !important;
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
