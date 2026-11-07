@@ -4,7 +4,7 @@
  * Original Obsidian Theme by Cecilia May (https://github.com/primary-theme/obsidian)
  * Preset: Bauhaus Red (Light #BF3F36) / Bauhaus Yellow (Dark #F4B943)
  * Rainbow Sidebar: Enabled (6-Color Bauhaus Cycle)
- * Built: 2026-11-07T07:01:36.916Z
+ * Built: 2026-11-07T07:10:13.438Z
  * ═══════════════════════════════════════════════════════════════════════════
  */
 
@@ -179,25 +179,25 @@ body.theme-light[data-agy-theme][data-newux-theme="onyx"] {
   --blockquote-bg: var(--color-l-gray-10);
   --blockquote-border: var(--color-l-gray-70);
 
-  /* Rainbow Palette (6-color cycle) */
-  --rainbow-1-fg: var(--color-l-red-30);
+  /* Rainbow Palette (6-color cycle — Bright Warm Bauhaus tones for Light Mode) */
+  --rainbow-1-fg: var(--color-l-red-30);          /* #BF3F36 Bauhaus Red */
   --rainbow-1-bg: rgba(240, 81, 108, 0.12);
   --rainbow-1-bg-hover: rgba(240, 81, 108, 0.20);
-  --rainbow-2-fg: var(--color-l-orange-30);
+  --rainbow-2-fg: var(--color-l-orange-20);       /* #EA7A43 Bauhaus Orange */
   --rainbow-2-bg: rgba(255, 115, 0, 0.12);
   --rainbow-2-bg-hover: rgba(255, 115, 0, 0.20);
-  --rainbow-3-fg: var(--color-l-yellow-40);
+  --rainbow-3-fg: var(--color-l-yellow-30);       /* #D79719 Bauhaus Golden Yellow */
   --rainbow-3-bg: rgba(255, 187, 0, 0.14);
   --rainbow-3-bg-hover: rgba(255, 187, 0, 0.24);
-  --rainbow-4-fg: var(--color-l-green-40);
-  --rainbow-4-bg: rgba(50, 149, 98, 0.12);
-  --rainbow-4-bg-hover: rgba(50, 149, 98, 0.20);
-  --rainbow-5-fg: var(--color-l-blue-30);
+  --rainbow-4-fg: var(--color-l-green-20);        /* #3EB278 Bauhaus Green */
+  --rainbow-4-bg: rgba(62, 178, 120, 0.12);
+  --rainbow-4-bg-hover: rgba(62, 178, 120, 0.20);
+  --rainbow-5-fg: var(--color-l-blue-20);         /* #2A90CB Bauhaus Blue */
   --rainbow-5-bg: rgba(42, 144, 203, 0.12);
   --rainbow-5-bg-hover: rgba(42, 144, 203, 0.20);
-  --rainbow-6-fg: var(--color-l-purple-30);
-  --rainbow-6-bg: rgba(116, 69, 150, 0.12);
-  --rainbow-6-bg-hover: rgba(116, 69, 150, 0.20);
+  --rainbow-6-fg: var(--color-l-purple-20);       /* #9E73B9 Bauhaus Purple */
+  --rainbow-6-bg: rgba(158, 115, 185, 0.12);
+  --rainbow-6-bg-hover: rgba(158, 115, 185, 0.20);
 }
 
 /* ───────────────────────────────────────────────────────────────────────────
