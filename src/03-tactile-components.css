@@ -90,14 +90,35 @@ body.theme-dark {
 /* ───────────────────────────────────────────────────────────────────────────
    1. TACTILE BUTTONS (.agy-button, .agy-send-button, surface buttons)
    ─────────────────────────────────────────────────────────────────────────── */
-body[data-agy-theme][data-newux-theme] :is(.agy-button-xs, .agy-button-sm, .agy-button-md, .agy-button-lg):not([class*="rounded-none"]) {
+body[data-agy-theme] :is(
+  .agy-button,
+  .agy-button-xs,
+  .agy-button-sm,
+  .agy-button-md,
+  .agy-button-lg,
+  :is(button, a)[class*="bg-primary"],
+  :is(button, a)[class*="bg-secondary"],
+  button.proceed-button
+):not([class*="rounded-none"]):not([class*="rounded-full"]) {
   border-radius: var(--button-radius) !important;
-  transition: transform 90ms ease, box-shadow 120ms ease, background-color 120ms ease !important;
+  transition: transform 90ms ease, box-shadow 120ms ease, background-color 120ms ease, filter 120ms ease !important;
+}
+
+/* Ensure link-based CTA buttons (e.g. Upgrade in Settings) align identically to standard buttons */
+body[data-agy-theme] a:is([class*="bg-primary"], [class*="bg-secondary"]):not(.agy-button) {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  height: 28px !important;
+  box-sizing: border-box !important;
+  text-decoration: none !important;
 }
 
 /* Surface / Secondary / Outlined Buttons */
 body[data-agy-theme] :is(
   button.surface-opaque,
+  :is(button, a).agy-button[class*="bg-"],
+  :is(button, a)[class*="bg-secondary"],
   .agy-button-xs[class*="bg-"],
   .agy-button-sm[class*="bg-"],
   .agy-button-md[class*="bg-"],
@@ -110,6 +131,8 @@ body[data-agy-theme] :is(
 
 body[data-agy-theme] :is(
   button.surface-opaque,
+  :is(button, a).agy-button[class*="bg-"],
+  :is(button, a)[class*="bg-secondary"],
   .agy-button-xs[class*="bg-"],
   .agy-button-sm[class*="bg-"],
   .agy-button-md[class*="bg-"],
@@ -122,13 +145,15 @@ body[data-agy-theme] :is(
 
 body[data-agy-theme] :is(
   button.surface-opaque,
+  :is(button, a).agy-button[class*="bg-"],
+  :is(button, a)[class*="bg-secondary"],
   .agy-button-xs[class*="bg-"],
   .agy-button-sm[class*="bg-"],
   .agy-button-md[class*="bg-"],
   .agy-button-lg[class*="bg-"],
   .agy-select-trigger,
   [data-testid="empty-file-open-button"]
-):not([class*="bg-transparent"]):not(:disabled):active {
+):not([class*="bg-transparent"]):not([class*="bg-primary"]):not(:disabled):active {
   box-shadow: var(--primary-btn-shadow-active) !important;
   transform: translateY(1px) !important;
 }
@@ -136,7 +161,7 @@ body[data-agy-theme] :is(
 /* Primary / Send / CTA Accent Buttons & Composer Round Action Buttons */
 body[data-agy-theme] :is(
   .agy-send-button:not(:disabled),
-  button[class*="bg-primary"]:not([role="switch"]):not(:disabled),
+  :is(button, a)[class*="bg-primary"]:not([role="switch"]):not(:disabled),
   button.proceed-button:not(:disabled)
 ) {
   box-shadow: var(--primary-accent-shadow) !important;
@@ -145,7 +170,7 @@ body[data-agy-theme] :is(
 
 body[data-agy-theme] :is(
   .agy-send-button:not(:disabled),
-  button[class*="bg-primary"]:not([role="switch"]):not(:disabled),
+  :is(button, a)[class*="bg-primary"]:not([role="switch"]):not(:disabled),
   button.proceed-button:not(:disabled)
 ):hover {
   filter: brightness(1.06);
@@ -153,7 +178,7 @@ body[data-agy-theme] :is(
 
 body[data-agy-theme] :is(
   .agy-send-button:not(:disabled),
-  button[class*="bg-primary"]:not([role="switch"]):not(:disabled),
+  :is(button, a)[class*="bg-primary"]:not([role="switch"]):not(:disabled),
   button.proceed-button:not(:disabled)
 ):active {
   box-shadow: var(--primary-btn-shadow-active) !important;
@@ -276,12 +301,14 @@ body[data-agy-theme] :is(
 
 body[data-agy-theme] :is(
   button.surface-opaque,
+  :is(button, a).agy-button[class*="bg-"],
+  :is(button, a)[class*="bg-secondary"],
   .agy-button-xs[class*="bg-"],
   .agy-button-sm[class*="bg-"],
   .agy-button-md[class*="bg-"],
   .agy-button-lg[class*="bg-"],
   .agy-select-trigger,
-  button[class*="bg-primary"]:not([role="switch"]):not(.agy-send-button),
+  :is(button, a)[class*="bg-primary"]:not([role="switch"]):not(.agy-send-button),
   button.proceed-button
 ):not([class*="bg-transparent"]):not(:disabled) > * {
   transform: translateY(-1px);
@@ -290,12 +317,14 @@ body[data-agy-theme] :is(
 
 body[data-agy-theme] :is(
   button.surface-opaque,
+  :is(button, a).agy-button[class*="bg-"],
+  :is(button, a)[class*="bg-secondary"],
   .agy-button-xs[class*="bg-"],
   .agy-button-sm[class*="bg-"],
   .agy-button-md[class*="bg-"],
   .agy-button-lg[class*="bg-"],
   .agy-select-trigger,
-  button[class*="bg-primary"]:not([role="switch"]):not(.agy-send-button),
+  :is(button, a)[class*="bg-primary"]:not([role="switch"]):not(.agy-send-button),
   button.proceed-button
 ):not([class*="bg-transparent"]):not(:disabled):active > * {
   transform: translateY(0px);
