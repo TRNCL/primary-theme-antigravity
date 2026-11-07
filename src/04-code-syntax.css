@@ -101,33 +101,43 @@ kbd {
 /* Unified Primary Card surface on the actual code block card container */
 body.theme-light [data-markdown-root] :is(pre > div.rounded-xl, div.rounded-xl:has(> .p-3 > .code-block)) {
   background-color: var(--color-l-gray-10) !important;
-  border: none !important;
+  border: 1px solid rgba(67, 46, 20, 0.12) !important;
   border-radius: 10px !important;
-  box-shadow: var(--primary-card-shadow) !important;
+  box-shadow:
+    inset 0px -2px 0px 0px rgba(67, 46, 20, 0.06),
+    0px 2px 5px -1px rgba(67, 46, 20, 0.05) !important;
   margin-block: 0 !important;
   overflow: hidden !important;
 }
 
 body.theme-dark [data-markdown-root] :is(pre > div.rounded-xl, div.rounded-xl:has(> .p-3 > .code-block)) {
   background-color: var(--color-d-gray-80) !important;
-  border: none !important;
+  border: 1px solid rgba(0, 0, 0, 0.36) !important;
   border-radius: 10px !important;
-  box-shadow: var(--primary-card-shadow) !important;
+  box-shadow:
+    inset 0px -2px 0px 0px rgba(0, 0, 0, 0.28),
+    0px 2px 6px -1px rgba(0, 0, 0, 0.26) !important;
   margin-block: 0 !important;
   overflow: hidden !important;
 }
 
-/* Language header bar at top of code block card */
+/* Language header bar at top of code block card — 100% flush with code body */
 body.theme-light [data-markdown-root] :is(pre > div.rounded-xl, div.rounded-xl:has(> .p-3 > .code-block)) > div:first-child:not(.p-3) {
   background-color: var(--color-l-gray-30) !important;
-  border-bottom: 1px solid var(--border) !important;
+  border-bottom: 1px solid rgba(67, 46, 20, 0.10) !important;
+  border-radius: 0 !important;
+  margin: 0 !important;
   padding-inline: 0.75rem !important;
+  box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.70) !important;
 }
 
 body.theme-dark [data-markdown-root] :is(pre > div.rounded-xl, div.rounded-xl:has(> .p-3 > .code-block)) > div:first-child:not(.p-3) {
   background-color: var(--color-d-gray-70) !important;
-  border-bottom: 1px solid var(--border) !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.28) !important;
+  border-radius: 0 !important;
+  margin: 0 !important;
   padding-inline: 0.75rem !important;
+  box-shadow: inset 0px 1px 0px 0px rgba(235, 218, 198, 0.07) !important;
 }
 
 /* Inner .p-3, .code-block, and .code-line must be transparent so no inner white box appears */
