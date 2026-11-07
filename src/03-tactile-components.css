@@ -127,7 +127,7 @@ body[data-agy-theme] :is(
   .agy-button-lg[class*="bg-"],
   .agy-select-trigger,
   [data-testid="empty-file-open-button"]
-):not([class*="bg-transparent"]):not(.bg-primary):not([role="switch"]):not([data-slot="toggle-group"] *):not(:disabled):not(.inline-pill):not([class*="inline-pill"]):not(.context-scope-mention):not(.context-scope-mention *) {
+):not([class*="bg-transparent"]):not([class*="rounded-none"]):not(.bg-primary):not([role="switch"]):not([data-slot="toggle-group"] *):not(:disabled):not(.inline-pill):not([class*="inline-pill"]):not(.context-scope-mention):not(.context-scope-mention *) {
   box-shadow: var(--primary-btn-shadow) !important;
 }
 
@@ -141,7 +141,7 @@ body[data-agy-theme] :is(
   .agy-button-lg[class*="bg-"],
   .agy-select-trigger,
   [data-testid="empty-file-open-button"]
-):not([class*="bg-transparent"]):not(.bg-primary):not([role="switch"]):not([data-slot="toggle-group"] *):not(:disabled):not(.inline-pill):not([class*="inline-pill"]):not(.context-scope-mention):not(.context-scope-mention *):hover {
+):not([class*="bg-transparent"]):not([class*="rounded-none"]):not(.bg-primary):not([role="switch"]):not([data-slot="toggle-group"] *):not(:disabled):not(.inline-pill):not([class*="inline-pill"]):not(.context-scope-mention):not(.context-scope-mention *):hover {
   box-shadow: var(--primary-btn-shadow-hover) !important;
 }
 
@@ -155,7 +155,7 @@ body[data-agy-theme] :is(
   .agy-button-lg[class*="bg-"],
   .agy-select-trigger,
   [data-testid="empty-file-open-button"]
-):not([class*="bg-transparent"]):not(.bg-primary):not([role="switch"]):not([data-slot="toggle-group"] *):not(:disabled):not(.inline-pill):not([class*="inline-pill"]):not(.context-scope-mention):not(.context-scope-mention *):active {
+):not([class*="bg-transparent"]):not([class*="rounded-none"]):not(.bg-primary):not([role="switch"]):not([data-slot="toggle-group"] *):not(:disabled):not(.inline-pill):not([class*="inline-pill"]):not(.context-scope-mention):not(.context-scope-mention *):active {
   box-shadow: var(--primary-btn-shadow-active) !important;
   transform: translateY(1px) !important;
 }
@@ -165,7 +165,7 @@ body[data-agy-theme] :is(
   .agy-send-button:not(:disabled),
   :is(button, a).bg-primary:not([role="switch"]):not(:disabled),
   button.proceed-button:not(:disabled)
-):not(.inline-pill):not([class*="inline-pill"]):not(.context-scope-mention):not(.context-scope-mention *) {
+):not([class*="rounded-none"]):not(.inline-pill):not([class*="inline-pill"]):not(.context-scope-mention):not(.context-scope-mention *) {
   box-shadow: var(--primary-accent-shadow) !important;
   transition: transform 90ms ease, box-shadow 120ms ease, filter 120ms ease !important;
 }
@@ -174,7 +174,7 @@ body[data-agy-theme] :is(
   .agy-send-button:not(:disabled),
   :is(button, a).bg-primary:not([role="switch"]):not(:disabled),
   button.proceed-button:not(:disabled)
-):not(.inline-pill):not([class*="inline-pill"]):not(.context-scope-mention):not(.context-scope-mention *):hover {
+):not([class*="rounded-none"]):not(.inline-pill):not([class*="inline-pill"]):not(.context-scope-mention):not(.context-scope-mention *):hover {
   filter: brightness(1.06);
 }
 
@@ -182,7 +182,7 @@ body[data-agy-theme] :is(
   .agy-send-button:not(:disabled),
   :is(button, a).bg-primary:not([role="switch"]):not(:disabled),
   button.proceed-button:not(:disabled)
-):not(.inline-pill):not([class*="inline-pill"]):not(.context-scope-mention):not(.context-scope-mention *):active {
+):not([class*="rounded-none"]):not(.inline-pill):not([class*="inline-pill"]):not(.context-scope-mention):not(.context-scope-mention *):active {
   box-shadow: var(--primary-btn-shadow-active) !important;
   transform: translateY(1.5px) !important;
 }
@@ -223,6 +223,30 @@ body[data-agy-theme] :is(
   button.inline-pill,
   [data-markdown-root] a,
   [data-markdown-root] button
+) > * {
+  transform: none !important;
+}
+
+/* Full-bleed card action rows and flush/joined buttons: strictly flat (no 3D button shadow) */
+body[data-agy-theme] :is(
+  button[class*="rounded-none"],
+  .agy-card button:is([class*="rounded-none"], [class*="w-full"].border-none)
+) {
+  box-shadow: none !important;
+  transform: none !important;
+}
+
+body[data-agy-theme] :is(
+  button[class*="rounded-none"],
+  .agy-card button:is([class*="rounded-none"], [class*="w-full"].border-none)
+):is(:hover, :active, :focus, :focus-visible) {
+  box-shadow: none !important;
+  transform: none !important;
+}
+
+body[data-agy-theme] :is(
+  button[class*="rounded-none"],
+  .agy-card button:is([class*="rounded-none"], [class*="w-full"].border-none)
 ) > * {
   transform: none !important;
 }
@@ -352,7 +376,7 @@ body[data-agy-theme] :is(
   .agy-select-trigger,
   :is(button, a).bg-primary:not([role="switch"]):not(.agy-send-button),
   button.proceed-button
-):not([class*="bg-transparent"]):not([role="switch"]):not([data-slot="toggle-group"] *):not(:disabled):not(.inline-pill):not([class*="inline-pill"]):not(.context-scope-mention):not(.context-scope-mention *) > * {
+):not([class*="bg-transparent"]):not([class*="rounded-none"]):not([role="switch"]):not([data-slot="toggle-group"] *):not(:disabled):not(.inline-pill):not([class*="inline-pill"]):not(.context-scope-mention):not(.context-scope-mention *) > * {
   transform: translateY(-1px);
   transition: transform 80ms ease;
 }
@@ -368,7 +392,7 @@ body[data-agy-theme] :is(
   .agy-select-trigger,
   :is(button, a).bg-primary:not([role="switch"]):not(.agy-send-button),
   button.proceed-button
-):not([class*="bg-transparent"]):not([role="switch"]):not([data-slot="toggle-group"] *):not(:disabled):not(.inline-pill):not([class*="inline-pill"]):not(.context-scope-mention):not(.context-scope-mention *):active > * {
+):not([class*="bg-transparent"]):not([class*="rounded-none"]):not([role="switch"]):not([data-slot="toggle-group"] *):not(:disabled):not(.inline-pill):not([class*="inline-pill"]):not(.context-scope-mention):not(.context-scope-mention *):active > * {
   transform: translateY(0px);
 }
 
@@ -608,7 +632,7 @@ body[data-agy-theme] :is(button, input, select, textarea, a, [tabindex]):focus-v
 
 /* 2. Apply pure 3D Tactile Keycap elevation on focused buttons & controls (no colored ring) */
 body[data-agy-theme][data-newux-theme] :is(
-  button:not([role="switch"]):not(.bg-primary):not(.agy-send-button):not([data-testid^="settings-nav-item-"]):not(.inline-pill):not([class*="inline-pill"]):not(.context-scope-mention *),
+  button:not([class*="rounded-none"]):not([role="switch"]):not(.bg-primary):not(.agy-send-button):not([data-testid^="settings-nav-item-"]):not(.inline-pill):not([class*="inline-pill"]):not(.context-scope-mention *),
   a:not(.absolute):not([data-markdown-root] *):not(.context-scope-mention *),
   [role="button"]:not([data-markdown-root] *):not(.context-scope-mention *),
   [role="tab"],
