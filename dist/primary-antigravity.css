@@ -4,7 +4,7 @@
  * Original Obsidian Theme by Cecilia May (https://github.com/primary-theme/obsidian)
  * Preset: Bauhaus Red (Light #BF3F36) / Bauhaus Yellow (Dark #F4B943)
  * Rainbow Sidebar: Enabled (6-Color Bauhaus Cycle)
- * Built: 2026-11-07T08:03:33.937Z
+ * Built: 2026-11-07T08:34:34.225Z
  * ═══════════════════════════════════════════════════════════════════════════
  */
 
@@ -556,8 +556,9 @@ body.theme-light {
     0px 10px 24px -8px rgba(67, 46, 20, 0.10);
 
   --primary-toggle-shadow:
-    inset 0 3px 6px rgba(67, 46, 20, 0.14),
-    inset 0 0 0 1px rgba(67, 46, 20, 0.12);
+    inset 0 2px 4px rgba(67, 46, 20, 0.22),
+    inset 0 0 0 1px rgba(67, 46, 20, 0.14),
+    0 1px 0 rgba(255, 255, 255, 0.65);
 }
 
 body.theme-dark {
@@ -598,8 +599,9 @@ body.theme-dark {
     0px 14px 32px -10px rgba(0, 0, 0, 0.48);
 
   --primary-toggle-shadow:
-    inset 0 3px 7px rgba(0, 0, 0, 0.38),
-    inset 0 0 0 1px rgba(255, 255, 255, 0.07);
+    inset 0 2px 5px rgba(0, 0, 0, 0.45),
+    inset 0 0 0 1px rgba(0, 0, 0, 0.35),
+    0 1px 0 rgba(255, 255, 255, 0.06);
 }
 
 /* ───────────────────────────────────────────────────────────────────────────
@@ -612,7 +614,7 @@ body[data-agy-theme] :is(
   .agy-button-md,
   .agy-button-lg,
   :is(button, a)[class*="bg-primary"],
-  :is(button, a)[class*="bg-secondary"],
+  :is(button, a)[class*="bg-secondary"]:not([role="switch"]),
   button.proceed-button
 ):not([class*="rounded-none"]):not([class*="rounded-full"]) {
   border-radius: var(--button-radius) !important;
@@ -633,42 +635,42 @@ body[data-agy-theme] a:is([class*="bg-primary"], [class*="bg-secondary"]):not(.a
 body[data-agy-theme] :is(
   button.surface-opaque,
   :is(button, a).agy-button[class*="bg-"],
-  :is(button, a)[class*="bg-secondary"],
+  :is(button, a)[class*="bg-secondary"]:not([role="switch"]),
   .agy-button-xs[class*="bg-"],
   .agy-button-sm[class*="bg-"],
   .agy-button-md[class*="bg-"],
   .agy-button-lg[class*="bg-"],
   .agy-select-trigger,
   [data-testid="empty-file-open-button"]
-):not([class*="bg-transparent"]):not([class*="bg-primary"]):not(:disabled) {
+):not([class*="bg-transparent"]):not([class*="bg-primary"]):not([role="switch"]):not(:disabled) {
   box-shadow: var(--primary-btn-shadow) !important;
 }
 
 body[data-agy-theme] :is(
   button.surface-opaque,
   :is(button, a).agy-button[class*="bg-"],
-  :is(button, a)[class*="bg-secondary"],
+  :is(button, a)[class*="bg-secondary"]:not([role="switch"]),
   .agy-button-xs[class*="bg-"],
   .agy-button-sm[class*="bg-"],
   .agy-button-md[class*="bg-"],
   .agy-button-lg[class*="bg-"],
   .agy-select-trigger,
   [data-testid="empty-file-open-button"]
-):not([class*="bg-transparent"]):not([class*="bg-primary"]):not(:disabled):hover {
+):not([class*="bg-transparent"]):not([class*="bg-primary"]):not([role="switch"]):not(:disabled):hover {
   box-shadow: var(--primary-btn-shadow-hover) !important;
 }
 
 body[data-agy-theme] :is(
   button.surface-opaque,
   :is(button, a).agy-button[class*="bg-"],
-  :is(button, a)[class*="bg-secondary"],
+  :is(button, a)[class*="bg-secondary"]:not([role="switch"]),
   .agy-button-xs[class*="bg-"],
   .agy-button-sm[class*="bg-"],
   .agy-button-md[class*="bg-"],
   .agy-button-lg[class*="bg-"],
   .agy-select-trigger,
   [data-testid="empty-file-open-button"]
-):not([class*="bg-transparent"]):not([class*="bg-primary"]):not(:disabled):active {
+):not([class*="bg-transparent"]):not([class*="bg-primary"]):not([role="switch"]):not(:disabled):active {
   box-shadow: var(--primary-btn-shadow-active) !important;
   transform: translateY(1px) !important;
 }
@@ -817,7 +819,7 @@ body[data-agy-theme] :is(
 body[data-agy-theme] :is(
   button.surface-opaque,
   :is(button, a).agy-button[class*="bg-"],
-  :is(button, a)[class*="bg-secondary"],
+  :is(button, a)[class*="bg-secondary"]:not([role="switch"]),
   .agy-button-xs[class*="bg-"],
   .agy-button-sm[class*="bg-"],
   .agy-button-md[class*="bg-"],
@@ -825,7 +827,7 @@ body[data-agy-theme] :is(
   .agy-select-trigger,
   :is(button, a)[class*="bg-primary"]:not([role="switch"]):not(.agy-send-button),
   button.proceed-button
-):not([class*="bg-transparent"]):not(:disabled) > * {
+):not([class*="bg-transparent"]):not([role="switch"]):not(:disabled) > * {
   transform: translateY(-1px);
   transition: transform 80ms ease;
 }
@@ -833,7 +835,7 @@ body[data-agy-theme] :is(
 body[data-agy-theme] :is(
   button.surface-opaque,
   :is(button, a).agy-button[class*="bg-"],
-  :is(button, a)[class*="bg-secondary"],
+  :is(button, a)[class*="bg-secondary"]:not([role="switch"]),
   .agy-button-xs[class*="bg-"],
   .agy-button-sm[class*="bg-"],
   .agy-button-md[class*="bg-"],
@@ -841,7 +843,7 @@ body[data-agy-theme] :is(
   .agy-select-trigger,
   :is(button, a)[class*="bg-primary"]:not([role="switch"]):not(.agy-send-button),
   button.proceed-button
-):not([class*="bg-transparent"]):not(:disabled):active > * {
+):not([class*="bg-transparent"]):not([role="switch"]):not(:disabled):active > * {
   transform: translateY(0px);
 }
 
@@ -899,33 +901,74 @@ body[data-agy-theme][data-newux-theme] .artifact-card:hover {
 /* ───────────────────────────────────────────────────────────────────────────
    4. TOGGLE SWITCHES & SEGMENTED CONTROLS
    ─────────────────────────────────────────────────────────────────────────── */
-body[data-agy-theme] button[role="switch"],
+body[data-agy-theme] :is(button, a)[role="switch"],
 body[data-agy-theme] [role="switch"] {
-  box-shadow: var(--primary-toggle-shadow) !important;
+  transform: none !important;
+  transition: background-color 200ms ease, box-shadow 200ms ease !important;
 }
 
-body.theme-light[data-agy-theme] [role="switch"][aria-checked="true"] {
-  background-color: var(--color-l-green-30) !important;
+body[data-agy-theme] :is(button, a)[role="switch"]:hover,
+body[data-agy-theme] [role="switch"]:hover,
+body[data-agy-theme] :is(button, a)[role="switch"]:active,
+body[data-agy-theme] [role="switch"]:active {
+  transform: none !important;
+}
+
+/* Switch Track — OFF state (sunken well / recessed groove) */
+body.theme-light[data-agy-theme] :is(button, a)[role="switch"]:not([aria-checked="true"]):not([data-state="checked"]),
+body.theme-light[data-agy-theme] [role="switch"][aria-checked="false"],
+body.theme-light[data-agy-theme] [role="switch"][data-state="unchecked"] {
+  background-color: var(--color-l-gray-30, #F2ECE3) !important;
   box-shadow:
-    inset 0 2px 5px rgba(0, 0, 0, 0.22),
+    inset 0 2px 4px rgba(67, 46, 20, 0.22),
+    inset 0 0 0 1px rgba(67, 46, 20, 0.14),
+    0 1px 0 rgba(255, 255, 255, 0.65) !important;
+}
+
+body.theme-dark[data-agy-theme] :is(button, a)[role="switch"]:not([aria-checked="true"]):not([data-state="checked"]),
+body.theme-dark[data-agy-theme] [role="switch"][aria-checked="false"],
+body.theme-dark[data-agy-theme] [role="switch"][data-state="unchecked"] {
+  background-color: var(--color-d-gray-120, #181512) !important;
+  box-shadow:
+    inset 0 2px 5px rgba(0, 0, 0, 0.45),
+    inset 0 0 0 1px rgba(0, 0, 0, 0.35),
+    0 1px 0 rgba(255, 255, 255, 0.06) !important;
+}
+
+/* Switch Track — ON state (sunken green well) */
+body.theme-light[data-agy-theme] :is(button, a)[role="switch"]:is([aria-checked="true"], [data-state="checked"]),
+body.theme-light[data-agy-theme] [role="switch"]:is([aria-checked="true"], [data-state="checked"]) {
+  background-color: var(--color-l-green-30, #329562) !important;
+  box-shadow:
+    inset 0 2px 5px rgba(0, 0, 0, 0.24),
     inset 0 0 0 1px rgba(0, 0, 0, 0.16),
     0 1px 0 rgba(255, 255, 255, 0.65) !important;
 }
 
-body.theme-dark[data-agy-theme] [role="switch"][aria-checked="true"] {
-  background-color: var(--color-d-green-30) !important;
+body.theme-dark[data-agy-theme] :is(button, a)[role="switch"]:is([aria-checked="true"], [data-state="checked"]),
+body.theme-dark[data-agy-theme] [role="switch"]:is([aria-checked="true"], [data-state="checked"]) {
+  background-color: var(--color-d-green-30, #38B275) !important;
   box-shadow:
     inset 0 2px 5px rgba(0, 0, 0, 0.38),
     inset 0 0 0 1px rgba(0, 0, 0, 0.32),
     0 1px 0 rgba(255, 255, 255, 0.08) !important;
 }
 
-body[data-agy-theme] [role="switch"] > span {
+/* Switch Knob (slider ball with tactile highlight and drop shadow onto track) */
+body.theme-light[data-agy-theme] [role="switch"] > span {
   background-color: #FCFAF8 !important;
   box-shadow:
     inset 0 1px 0 1px rgba(255, 255, 255, 0.9),
-    inset 0 0 0 1px rgba(0, 0, 0, 0.16),
-    0 2px 3px rgba(0, 0, 0, 0.22) !important;
+    inset 0 0 0 1px rgba(67, 46, 20, 0.16),
+    0 2px 3px rgba(67, 46, 20, 0.22) !important;
+}
+
+body.theme-dark[data-agy-theme] [role="switch"] > span {
+  background-color: #E6DDD2 !important;
+  box-shadow:
+    inset 0 1px 0 1px rgba(255, 255, 255, 0.4),
+    inset 0 0 0 1px rgba(0, 0, 0, 0.35),
+    0 2px 4px rgba(0, 0, 0, 0.45) !important;
 }
 
 body[data-agy-theme][data-newux-theme="onyx"] [data-slot="toggle-group"] {
