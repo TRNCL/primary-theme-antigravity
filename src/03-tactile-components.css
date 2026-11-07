@@ -689,29 +689,41 @@ body[data-agy-theme][data-newux-theme] [role="switch"]:focus-visible {
   box-shadow: var(--primary-toggle-shadow) !important;
 }
 
-/* 6. Inputs, Textareas & Focus-Within Containers */
+/* 6. Inputs, Textareas & Focus-Within Containers (Neutral, clean focus without red outline) */
 body.theme-light[data-agy-theme] :is(
-  input:not([type="checkbox"]):not([type="radio"]):not([type="search"]):not([placeholder*="Search"]):not([placeholder*="搜索"]),
+  input:not([type="checkbox"]):not([type="radio"]):not([type="search"]):not([placeholder*="Search"]):not([placeholder*="搜索"]):not(.no-focus-ring):not([class*="no-focus-ring"]):not([class*="border-none"]):not([class*="bg-transparent"]),
   select,
   textarea,
   .focus-within-ring:focus-within:not(.no-focus-ring)
 ):focus-visible {
-  border-color: var(--primary) !important;
+  border-color: var(--color-l-gray-80, #B79D7B) !important;
   box-shadow:
-    inset 0 2px 4px rgba(67, 46, 20, 0.20),
-    inset 0 0 0 1.5px var(--primary),
+    inset 0 2px 4px rgba(67, 46, 20, 0.16),
+    inset 0 0 0 1px var(--color-l-gray-80, #B79D7B),
     0 1px 0 rgba(255, 255, 255, 0.65) !important;
 }
 
 body.theme-dark[data-agy-theme] :is(
-  input:not([type="checkbox"]):not([type="radio"]):not([type="search"]):not([placeholder*="Search"]):not([placeholder*="搜索"]),
+  input:not([type="checkbox"]):not([type="radio"]):not([type="search"]):not([placeholder*="Search"]):not([placeholder*="搜索"]):not(.no-focus-ring):not([class*="no-focus-ring"]):not([class*="border-none"]):not([class*="bg-transparent"]),
   select,
   textarea,
   .focus-within-ring:focus-within:not(.no-focus-ring)
 ):focus-visible {
-  border-color: var(--primary) !important;
+  border-color: var(--color-d-gray-70, #5C5248) !important;
   box-shadow:
-    inset 0 2px 5px rgba(0, 0, 0, 0.55),
-    inset 0 0 0 1.5px var(--primary),
+    inset 0 2px 5px rgba(0, 0, 0, 0.45),
+    inset 0 0 0 1px var(--color-d-gray-70, #5C5248),
     0 1px 0 rgba(255, 255, 255, 0.08) !important;
+}
+
+/* Explicitly ensure transparent/borderless inline inputs remain completely borderless and shadowless */
+body[data-agy-theme] :is(
+  input.no-focus-ring,
+  input[class*="no-focus-ring"],
+  input[class*="border-none"],
+  input[class*="bg-transparent"]:not(.agy-field)
+):is(:focus, :focus-visible) {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
 }
