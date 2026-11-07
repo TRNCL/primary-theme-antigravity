@@ -4,7 +4,7 @@
  * Original Obsidian Theme by Cecilia May (https://github.com/primary-theme/obsidian)
  * Preset: Bauhaus Red (Light #BF3F36) / Bauhaus Yellow (Dark #F4B943)
  * Rainbow Sidebar: Enabled (6-Color Bauhaus Cycle)
- * Built: 2026-11-07T09:19:28.053Z
+ * Built: 2026-11-07T09:34:56.564Z
  * ═══════════════════════════════════════════════════════════════════════════
  */
 
@@ -613,16 +613,16 @@ body[data-agy-theme] :is(
   .agy-button-sm,
   .agy-button-md,
   .agy-button-lg,
-  :is(button, a)[class*="bg-primary"],
-  :is(button, a)[class*="bg-secondary"]:not([role="switch"]):not([data-slot="toggle-group"] *),
+  :is(button, a).bg-primary,
+  :is(button, a).bg-secondary:not([role="switch"]):not([data-slot="toggle-group"] *),
   button.proceed-button
-):not([class*="rounded-none"]):not([class*="rounded-full"]):not([data-slot="toggle-group"] *) {
+):not([class*="rounded-none"]):not([class*="rounded-full"]):not([data-slot="toggle-group"] *):not(.inline-pill):not([class*="inline-pill"]):not(.context-scope-mention):not(.context-scope-mention *) {
   border-radius: var(--button-radius) !important;
   transition: transform 90ms ease, box-shadow 120ms ease, background-color 120ms ease, filter 120ms ease !important;
 }
 
 /* Ensure link-based CTA buttons (e.g. Upgrade in Settings) align identically to standard buttons */
-body[data-agy-theme] a:is([class*="bg-primary"], [class*="bg-secondary"]):not(.agy-button) {
+body[data-agy-theme] a:is(.bg-primary, .bg-secondary):not(.agy-button):not(.inline-pill):not([class*="inline-pill"]):not(.context-scope-mention *) {
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
@@ -635,42 +635,42 @@ body[data-agy-theme] a:is([class*="bg-primary"], [class*="bg-secondary"]):not(.a
 body[data-agy-theme] :is(
   button.surface-opaque,
   :is(button, a).agy-button[class*="bg-"],
-  :is(button, a)[class*="bg-secondary"]:not([role="switch"]):not([data-slot="toggle-group"] *),
+  :is(button, a).bg-secondary:not([role="switch"]):not([data-slot="toggle-group"] *),
   .agy-button-xs[class*="bg-"],
   .agy-button-sm[class*="bg-"],
   .agy-button-md[class*="bg-"],
   .agy-button-lg[class*="bg-"],
   .agy-select-trigger,
   [data-testid="empty-file-open-button"]
-):not([class*="bg-transparent"]):not([class*="bg-primary"]):not([role="switch"]):not([data-slot="toggle-group"] *):not(:disabled) {
+):not([class*="bg-transparent"]):not(.bg-primary):not([role="switch"]):not([data-slot="toggle-group"] *):not(:disabled):not(.inline-pill):not([class*="inline-pill"]):not(.context-scope-mention):not(.context-scope-mention *) {
   box-shadow: var(--primary-btn-shadow) !important;
 }
 
 body[data-agy-theme] :is(
   button.surface-opaque,
   :is(button, a).agy-button[class*="bg-"],
-  :is(button, a)[class*="bg-secondary"]:not([role="switch"]):not([data-slot="toggle-group"] *),
+  :is(button, a).bg-secondary:not([role="switch"]):not([data-slot="toggle-group"] *),
   .agy-button-xs[class*="bg-"],
   .agy-button-sm[class*="bg-"],
   .agy-button-md[class*="bg-"],
   .agy-button-lg[class*="bg-"],
   .agy-select-trigger,
   [data-testid="empty-file-open-button"]
-):not([class*="bg-transparent"]):not([class*="bg-primary"]):not([role="switch"]):not([data-slot="toggle-group"] *):not(:disabled):hover {
+):not([class*="bg-transparent"]):not(.bg-primary):not([role="switch"]):not([data-slot="toggle-group"] *):not(:disabled):not(.inline-pill):not([class*="inline-pill"]):not(.context-scope-mention):not(.context-scope-mention *):hover {
   box-shadow: var(--primary-btn-shadow-hover) !important;
 }
 
 body[data-agy-theme] :is(
   button.surface-opaque,
   :is(button, a).agy-button[class*="bg-"],
-  :is(button, a)[class*="bg-secondary"]:not([role="switch"]):not([data-slot="toggle-group"] *),
+  :is(button, a).bg-secondary:not([role="switch"]):not([data-slot="toggle-group"] *),
   .agy-button-xs[class*="bg-"],
   .agy-button-sm[class*="bg-"],
   .agy-button-md[class*="bg-"],
   .agy-button-lg[class*="bg-"],
   .agy-select-trigger,
   [data-testid="empty-file-open-button"]
-):not([class*="bg-transparent"]):not([class*="bg-primary"]):not([role="switch"]):not([data-slot="toggle-group"] *):not(:disabled):active {
+):not([class*="bg-transparent"]):not(.bg-primary):not([role="switch"]):not([data-slot="toggle-group"] *):not(:disabled):not(.inline-pill):not([class*="inline-pill"]):not(.context-scope-mention):not(.context-scope-mention *):active {
   box-shadow: var(--primary-btn-shadow-active) !important;
   transform: translateY(1px) !important;
 }
@@ -678,28 +678,68 @@ body[data-agy-theme] :is(
 /* Primary / Send / CTA Accent Buttons & Composer Round Action Buttons */
 body[data-agy-theme] :is(
   .agy-send-button:not(:disabled),
-  :is(button, a)[class*="bg-primary"]:not([role="switch"]):not(:disabled),
+  :is(button, a).bg-primary:not([role="switch"]):not(:disabled),
   button.proceed-button:not(:disabled)
-) {
+):not(.inline-pill):not([class*="inline-pill"]):not(.context-scope-mention):not(.context-scope-mention *) {
   box-shadow: var(--primary-accent-shadow) !important;
   transition: transform 90ms ease, box-shadow 120ms ease, filter 120ms ease !important;
 }
 
 body[data-agy-theme] :is(
   .agy-send-button:not(:disabled),
-  :is(button, a)[class*="bg-primary"]:not([role="switch"]):not(:disabled),
+  :is(button, a).bg-primary:not([role="switch"]):not(:disabled),
   button.proceed-button:not(:disabled)
-):hover {
+):not(.inline-pill):not([class*="inline-pill"]):not(.context-scope-mention):not(.context-scope-mention *):hover {
   filter: brightness(1.06);
 }
 
 body[data-agy-theme] :is(
   .agy-send-button:not(:disabled),
-  :is(button, a)[class*="bg-primary"]:not([role="switch"]):not(:disabled),
+  :is(button, a).bg-primary:not([role="switch"]):not(:disabled),
   button.proceed-button:not(:disabled)
-):active {
+):not(.inline-pill):not([class*="inline-pill"]):not(.context-scope-mention):not(.context-scope-mention *):active {
   box-shadow: var(--primary-btn-shadow-active) !important;
   transform: translateY(1.5px) !important;
+}
+
+/* Inline links, file mentions & pills in conversation dialogs: strictly flat (never 3D) */
+body[data-agy-theme] :is(
+  .context-scope-mention,
+  .context-scope-mention *,
+  .inline-pill,
+  button.inline-pill,
+  [data-markdown-root] a,
+  [data-markdown-root] button:is(.inline-pill, [class*="inline-pill"]),
+  [data-testid="conversation-view"] :is(.inline-pill, [class*="inline-pill"]),
+  [data-testid="conversation-view"] a:not(.agy-button):not(.bg-primary):not(.bg-secondary)
+) {
+  box-shadow: none !important;
+  transform: none !important;
+  border-radius: var(--radius-md, 6px) !important;
+}
+
+body[data-agy-theme] :is(
+  .context-scope-mention,
+  .context-scope-mention *,
+  .inline-pill,
+  button.inline-pill,
+  [data-markdown-root] a,
+  [data-markdown-root] button:is(.inline-pill, [class*="inline-pill"]),
+  [data-testid="conversation-view"] :is(.inline-pill, [class*="inline-pill"]),
+  [data-testid="conversation-view"] a:not(.agy-button):not(.bg-primary):not(.bg-secondary)
+):is(:hover, :active, :focus, :focus-visible) {
+  box-shadow: none !important;
+  transform: none !important;
+}
+
+body[data-agy-theme] :is(
+  .context-scope-mention,
+  .inline-pill,
+  button.inline-pill,
+  [data-markdown-root] a,
+  [data-markdown-root] button
+) > * {
+  transform: none !important;
 }
 
 /* Composer Bottom-Right Circular Buttons: Voice/Live Pill & Cancel/Stop/Disabled-Send Button */
@@ -819,15 +859,15 @@ body[data-agy-theme] :is(
 body[data-agy-theme] :is(
   button.surface-opaque,
   :is(button, a).agy-button[class*="bg-"],
-  :is(button, a)[class*="bg-secondary"]:not([role="switch"]):not([data-slot="toggle-group"] *),
+  :is(button, a).bg-secondary:not([role="switch"]):not([data-slot="toggle-group"] *),
   .agy-button-xs[class*="bg-"],
   .agy-button-sm[class*="bg-"],
   .agy-button-md[class*="bg-"],
   .agy-button-lg[class*="bg-"],
   .agy-select-trigger,
-  :is(button, a)[class*="bg-primary"]:not([role="switch"]):not(.agy-send-button),
+  :is(button, a).bg-primary:not([role="switch"]):not(.agy-send-button),
   button.proceed-button
-):not([class*="bg-transparent"]):not([role="switch"]):not([data-slot="toggle-group"] *):not(:disabled) > * {
+):not([class*="bg-transparent"]):not([role="switch"]):not([data-slot="toggle-group"] *):not(:disabled):not(.inline-pill):not([class*="inline-pill"]):not(.context-scope-mention):not(.context-scope-mention *) > * {
   transform: translateY(-1px);
   transition: transform 80ms ease;
 }
@@ -835,15 +875,15 @@ body[data-agy-theme] :is(
 body[data-agy-theme] :is(
   button.surface-opaque,
   :is(button, a).agy-button[class*="bg-"],
-  :is(button, a)[class*="bg-secondary"]:not([role="switch"]):not([data-slot="toggle-group"] *),
+  :is(button, a).bg-secondary:not([role="switch"]):not([data-slot="toggle-group"] *),
   .agy-button-xs[class*="bg-"],
   .agy-button-sm[class*="bg-"],
   .agy-button-md[class*="bg-"],
   .agy-button-lg[class*="bg-"],
   .agy-select-trigger,
-  :is(button, a)[class*="bg-primary"]:not([role="switch"]):not(.agy-send-button),
+  :is(button, a).bg-primary:not([role="switch"]):not(.agy-send-button),
   button.proceed-button
-):not([class*="bg-transparent"]):not([role="switch"]):not([data-slot="toggle-group"] *):not(:disabled):active > * {
+):not([class*="bg-transparent"]):not([role="switch"]):not([data-slot="toggle-group"] *):not(:disabled):not(.inline-pill):not([class*="inline-pill"]):not(.context-scope-mention):not(.context-scope-mention *):active > * {
   transform: translateY(0px);
 }
 
@@ -1083,12 +1123,12 @@ body[data-agy-theme] :is(button, input, select, textarea, a, [tabindex]):focus-v
 
 /* 2. Apply pure 3D Tactile Keycap elevation on focused buttons & controls (no colored ring) */
 body[data-agy-theme][data-newux-theme] :is(
-  button:not([role="switch"]):not([class*="bg-primary"]):not(.agy-send-button):not([data-testid^="settings-nav-item-"]),
-  a:not(.absolute),
-  [role="button"],
+  button:not([role="switch"]):not(.bg-primary):not(.agy-send-button):not([data-testid^="settings-nav-item-"]):not(.inline-pill):not([class*="inline-pill"]):not(.context-scope-mention *),
+  a:not(.absolute):not([data-markdown-root] *):not(.context-scope-mention *),
+  [role="button"]:not([data-markdown-root] *):not(.context-scope-mention *),
   [role="tab"],
   [role="menuitem"],
-  [tabindex]:not([tabindex="-1"]):not(div.surface-composer *)
+  [tabindex]:not([tabindex="-1"]):not(div.surface-composer *):not([data-markdown-root] *):not(.context-scope-mention *)
 ):focus-visible {
   background-color: var(--card) !important;
   box-shadow: var(--primary-btn-shadow-hover) !important;
@@ -1104,7 +1144,7 @@ body[data-agy-theme][data-newux-theme] :is(.agy-sidebar-row, [data-testid="conve
 /* 4. Filled Accent Buttons (.agy-send-button, bg-primary, voice-live-pill) when keyboard focused */
 body[data-agy-theme][data-newux-theme] :is(
   .agy-send-button:not(:disabled),
-  button[class*="bg-primary"]:not([role="switch"]):not(:disabled),
+  button.bg-primary:not([role="switch"]):not(:disabled),
   button.proceed-button:not(:disabled)
 ):focus-visible {
   box-shadow: var(--primary-accent-shadow) !important;
