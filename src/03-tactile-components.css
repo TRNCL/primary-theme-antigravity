@@ -99,15 +99,15 @@ body[data-agy-theme] :is(
   .agy-button-md,
   .agy-button-lg,
   :is(button, a).bg-primary,
-  :is(button, a).bg-secondary:not([role="switch"]):not([data-slot="toggle-group"] *),
+  :is(button, a).bg-secondary:not([role="switch"]):not([data-slot="toggle-group"] *):not(nav.agy-pill *):not(nav[class*="agy-pill"] *),
   button.proceed-button
-):not([class*="rounded-none"]):not([class*="rounded-full"]):not([data-slot="toggle-group"] *):not(.inline-pill):not([class*="inline-pill"]):not(.context-scope-mention):not(.context-scope-mention *) {
+):not([class*="rounded-none"]):not([class*="rounded-full"]):not([data-slot="toggle-group"] *):not(nav.agy-pill *):not(nav[class*="agy-pill"] *):not(.inline-pill):not([class*="inline-pill"]):not(.context-scope-mention):not(.context-scope-mention *) {
   border-radius: var(--button-radius) !important;
   transition: transform 90ms ease, box-shadow 120ms ease, background-color 120ms ease, filter 120ms ease !important;
 }
 
 /* Ensure link-based CTA buttons (e.g. Upgrade in Settings) align identically to standard buttons */
-body[data-agy-theme] a:is(.bg-primary, .bg-secondary):not(.agy-button):not(.inline-pill):not([class*="inline-pill"]):not(.context-scope-mention *) {
+body[data-agy-theme] a:is(.bg-primary, .bg-secondary):not(.agy-button):not([data-slot="toggle-group"] *):not(nav.agy-pill *):not(nav[class*="agy-pill"] *):not(.inline-pill):not([class*="inline-pill"]):not(.context-scope-mention *) {
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
@@ -120,42 +120,42 @@ body[data-agy-theme] a:is(.bg-primary, .bg-secondary):not(.agy-button):not(.inli
 body[data-agy-theme] :is(
   button.surface-opaque,
   :is(button, a).agy-button[class*="bg-"],
-  :is(button, a).bg-secondary:not([role="switch"]):not([data-slot="toggle-group"] *),
+  :is(button, a).bg-secondary:not([role="switch"]):not([data-slot="toggle-group"] *):not(nav.agy-pill *):not(nav[class*="agy-pill"] *),
   .agy-button-xs[class*="bg-"],
   .agy-button-sm[class*="bg-"],
   .agy-button-md[class*="bg-"],
   .agy-button-lg[class*="bg-"],
   .agy-select-trigger,
   [data-testid="empty-file-open-button"]
-):not([class*="bg-transparent"]):not([class*="rounded-none"]):not(.bg-primary):not([role="switch"]):not([data-slot="toggle-group"] *):not(:disabled):not(.inline-pill):not([class*="inline-pill"]):not(.context-scope-mention):not(.context-scope-mention *) {
+):not([class*="bg-transparent"]):not([class*="rounded-none"]):not(.bg-primary):not([role="switch"]):not([data-slot="toggle-group"] *):not(nav.agy-pill *):not(nav[class*="agy-pill"] *):not(:disabled):not(.inline-pill):not([class*="inline-pill"]):not(.context-scope-mention):not(.context-scope-mention *) {
   box-shadow: var(--primary-btn-shadow) !important;
 }
 
 body[data-agy-theme] :is(
   button.surface-opaque,
   :is(button, a).agy-button[class*="bg-"],
-  :is(button, a).bg-secondary:not([role="switch"]):not([data-slot="toggle-group"] *),
+  :is(button, a).bg-secondary:not([role="switch"]):not([data-slot="toggle-group"] *):not(nav.agy-pill *):not(nav[class*="agy-pill"] *),
   .agy-button-xs[class*="bg-"],
   .agy-button-sm[class*="bg-"],
   .agy-button-md[class*="bg-"],
   .agy-button-lg[class*="bg-"],
   .agy-select-trigger,
   [data-testid="empty-file-open-button"]
-):not([class*="bg-transparent"]):not([class*="rounded-none"]):not(.bg-primary):not([role="switch"]):not([data-slot="toggle-group"] *):not(:disabled):not(.inline-pill):not([class*="inline-pill"]):not(.context-scope-mention):not(.context-scope-mention *):hover {
+):not([class*="bg-transparent"]):not([class*="rounded-none"]):not(.bg-primary):not([role="switch"]):not([data-slot="toggle-group"] *):not(nav.agy-pill *):not(nav[class*="agy-pill"] *):not(:disabled):not(.inline-pill):not([class*="inline-pill"]):not(.context-scope-mention):not(.context-scope-mention *):hover {
   box-shadow: var(--primary-btn-shadow-hover) !important;
 }
 
 body[data-agy-theme] :is(
   button.surface-opaque,
   :is(button, a).agy-button[class*="bg-"],
-  :is(button, a).bg-secondary:not([role="switch"]):not([data-slot="toggle-group"] *),
+  :is(button, a).bg-secondary:not([role="switch"]):not([data-slot="toggle-group"] *):not(nav.agy-pill *):not(nav[class*="agy-pill"] *),
   .agy-button-xs[class*="bg-"],
   .agy-button-sm[class*="bg-"],
   .agy-button-md[class*="bg-"],
   .agy-button-lg[class*="bg-"],
   .agy-select-trigger,
   [data-testid="empty-file-open-button"]
-):not([class*="bg-transparent"]):not([class*="rounded-none"]):not(.bg-primary):not([role="switch"]):not([data-slot="toggle-group"] *):not(:disabled):not(.inline-pill):not([class*="inline-pill"]):not(.context-scope-mention):not(.context-scope-mention *):active {
+):not([class*="bg-transparent"]):not([class*="rounded-none"]):not(.bg-primary):not([role="switch"]):not([data-slot="toggle-group"] *):not(nav.agy-pill *):not(nav[class*="agy-pill"] *):not(:disabled):not(.inline-pill):not([class*="inline-pill"]):not(.context-scope-mention):not(.context-scope-mention *):active {
   box-shadow: var(--primary-btn-shadow-active) !important;
   transform: translateY(1px) !important;
 }
@@ -368,7 +368,7 @@ body[data-agy-theme] :is(
 body[data-agy-theme] :is(
   button.surface-opaque,
   :is(button, a).agy-button[class*="bg-"],
-  :is(button, a).bg-secondary:not([role="switch"]):not([data-slot="toggle-group"] *),
+  :is(button, a).bg-secondary:not([role="switch"]):not([data-slot="toggle-group"] *):not(nav.agy-pill *):not(nav[class*="agy-pill"] *),
   .agy-button-xs[class*="bg-"],
   .agy-button-sm[class*="bg-"],
   .agy-button-md[class*="bg-"],
@@ -376,7 +376,7 @@ body[data-agy-theme] :is(
   .agy-select-trigger,
   :is(button, a).bg-primary:not([role="switch"]):not(.agy-send-button),
   button.proceed-button
-):not([class*="bg-transparent"]):not([class*="rounded-none"]):not([role="switch"]):not([data-slot="toggle-group"] *):not(:disabled):not(.inline-pill):not([class*="inline-pill"]):not(.context-scope-mention):not(.context-scope-mention *) > * {
+):not([class*="bg-transparent"]):not([class*="rounded-none"]):not([role="switch"]):not([data-slot="toggle-group"] *):not(nav.agy-pill *):not(nav[class*="agy-pill"] *):not(:disabled):not(.inline-pill):not([class*="inline-pill"]):not(.context-scope-mention):not(.context-scope-mention *) > * {
   transform: translateY(-1px);
   transition: transform 80ms ease;
 }
@@ -384,7 +384,7 @@ body[data-agy-theme] :is(
 body[data-agy-theme] :is(
   button.surface-opaque,
   :is(button, a).agy-button[class*="bg-"],
-  :is(button, a).bg-secondary:not([role="switch"]):not([data-slot="toggle-group"] *),
+  :is(button, a).bg-secondary:not([role="switch"]):not([data-slot="toggle-group"] *):not(nav.agy-pill *):not(nav[class*="agy-pill"] *),
   .agy-button-xs[class*="bg-"],
   .agy-button-sm[class*="bg-"],
   .agy-button-md[class*="bg-"],
@@ -392,7 +392,7 @@ body[data-agy-theme] :is(
   .agy-select-trigger,
   :is(button, a).bg-primary:not([role="switch"]):not(.agy-send-button),
   button.proceed-button
-):not([class*="bg-transparent"]):not([class*="rounded-none"]):not([role="switch"]):not([data-slot="toggle-group"] *):not(:disabled):not(.inline-pill):not([class*="inline-pill"]):not(.context-scope-mention):not(.context-scope-mention *):active > * {
+):not([class*="bg-transparent"]):not([class*="rounded-none"]):not([role="switch"]):not([data-slot="toggle-group"] *):not(nav.agy-pill *):not(nav[class*="agy-pill"] *):not(:disabled):not(.inline-pill):not([class*="inline-pill"]):not(.context-scope-mention):not(.context-scope-mention *):active > * {
   transform: translateY(0px);
 }
 
@@ -566,8 +566,8 @@ body.theme-dark[data-agy-theme] [role="switch"] > span {
     0 2px 4px rgba(0, 0, 0, 0.45) !important;
 }
 
-/* Segmented Controls & Toggle Groups ([data-slot="toggle-group"]) */
-body[data-agy-theme] [data-slot="toggle-group"] {
+/* Segmented Controls, Toggle Groups & Nav Pills ([data-slot="toggle-group"], nav.agy-pill) */
+body[data-agy-theme] :is([data-slot="toggle-group"], nav.agy-pill, nav[class*="agy-pill"]) {
   background-color: var(--onyx-well, var(--secondary)) !important;
   box-shadow: var(--primary-toggle-shadow) !important;
   border-radius: 10px !important;
@@ -575,39 +575,63 @@ body[data-agy-theme] [data-slot="toggle-group"] {
   padding: 2px !important;
 }
 
-/* Unselected options in toggle groups: completely flat, NO 3D button shadow */
-body[data-agy-theme] [data-slot="toggle-group"] > button:not([data-pressed]):not([aria-pressed="true"]):not([data-state="on"]) {
+/* Unselected options in toggle groups & segmented navs: completely flat, NO 3D button shadow */
+body[data-agy-theme] :is(
+  [data-slot="toggle-group"] > button:not([data-pressed]):not([aria-pressed="true"]):not([data-state="on"]),
+  nav.agy-pill > :is(a, button):not(.active):not([data-state="active"]):not([aria-current="page"]):not([aria-selected="true"]),
+  nav[class*="agy-pill"] > :is(a, button):not(.active):not([data-state="active"]):not([aria-current="page"]):not([aria-selected="true"])
+) {
   background-color: transparent !important;
   box-shadow: none !important;
   transform: none !important;
   border-radius: 6px !important;
 }
 
-body[data-agy-theme] [data-slot="toggle-group"] > button:not([data-pressed]):not([aria-pressed="true"]):not([data-state="on"]):hover {
+body[data-agy-theme] :is(
+  [data-slot="toggle-group"] > button:not([data-pressed]):not([aria-pressed="true"]):not([data-state="on"]),
+  nav.agy-pill > :is(a, button):not(.active):not([data-state="active"]):not([aria-current="page"]):not([aria-selected="true"]),
+  nav[class*="agy-pill"] > :is(a, button):not(.active):not([data-state="active"]):not([aria-current="page"]):not([aria-selected="true"])
+):hover {
   background-color: rgba(67, 46, 20, 0.06) !important;
   box-shadow: none !important;
   transform: none !important;
 }
 
-body[data-agy-theme] [data-slot="toggle-group"] > button:not([data-pressed]):not([aria-pressed="true"]):not([data-state="on"]):active {
+body[data-agy-theme] :is(
+  [data-slot="toggle-group"] > button:not([data-pressed]):not([aria-pressed="true"]):not([data-state="on"]),
+  nav.agy-pill > :is(a, button):not(.active):not([data-state="active"]):not([aria-current="page"]):not([aria-selected="true"]),
+  nav[class*="agy-pill"] > :is(a, button):not(.active):not([data-state="active"]):not([aria-current="page"]):not([aria-selected="true"])
+):active {
   background-color: rgba(67, 46, 20, 0.10) !important;
   box-shadow: none !important;
   transform: none !important;
 }
 
-body[data-agy-theme] [data-slot="toggle-group"] > button:not([data-pressed]):not([aria-pressed="true"]):not([data-state="on"]) > * {
+body[data-agy-theme] :is(
+  [data-slot="toggle-group"] > button:not([data-pressed]):not([aria-pressed="true"]):not([data-state="on"]),
+  nav.agy-pill > :is(a, button):not(.active):not([data-state="active"]):not([aria-current="page"]):not([aria-selected="true"]),
+  nav[class*="agy-pill"] > :is(a, button):not(.active):not([data-state="active"]):not([aria-current="page"]):not([aria-selected="true"])
+) > * {
   transform: none !important;
 }
 
 /* Selected option: 3D tactile keycap button */
-body.theme-light[data-agy-theme] [data-slot="toggle-group"] > button:is([data-pressed], [aria-pressed="true"], [data-state="on"]) {
+body.theme-light[data-agy-theme] :is(
+  [data-slot="toggle-group"] > button:is([data-pressed], [aria-pressed="true"], [data-state="on"]),
+  nav.agy-pill > :is(a, button):is(.active, [data-state="active"], [aria-current="page"], [aria-selected="true"]),
+  nav[class*="agy-pill"] > :is(a, button):is(.active, [data-state="active"], [aria-current="page"], [aria-selected="true"])
+) {
   background-color: #FCFAF8 !important;
   box-shadow: var(--primary-btn-shadow) !important;
   border-radius: 6px !important;
   transform: none !important;
 }
 
-body.theme-dark[data-agy-theme] [data-slot="toggle-group"] > button:is([data-pressed], [aria-pressed="true"], [data-state="on"]) {
+body.theme-dark[data-agy-theme] :is(
+  [data-slot="toggle-group"] > button:is([data-pressed], [aria-pressed="true"], [data-state="on"]),
+  nav.agy-pill > :is(a, button):is(.active, [data-state="active"], [aria-current="page"], [aria-selected="true"]),
+  nav[class*="agy-pill"] > :is(a, button):is(.active, [data-state="active"], [aria-current="page"], [aria-selected="true"])
+) {
   background-color: var(--color-d-gray-100) !important;
   box-shadow: var(--primary-btn-shadow) !important;
   border-radius: 6px !important;
