@@ -293,8 +293,12 @@ body[data-agy-theme] button[data-testid^="settings-nav-item-"]:not(.bg-sidebar-s
   background-color: var(--settings-nav-hover-bg, var(--sidebar-muted)) !important;
 }
 
-body[data-agy-theme] button[data-testid^="settings-nav-item-"]:not(.bg-sidebar-secondary):hover span {
+body.theme-light[data-agy-theme] button[data-testid^="settings-nav-item-"]:not(.bg-sidebar-secondary):hover span {
   color: var(--settings-nav-color, var(--foreground)) !important;
+}
+
+body.theme-dark[data-agy-theme] button[data-testid^="settings-nav-item-"]:not(.bg-sidebar-secondary):hover span {
+  color: var(--color-d-gray-10) !important;
 }
 
 /* Active state on Settings nav buttons: solid colorful 3D tactile keycap (Fig. 2) */
@@ -310,13 +314,29 @@ body[data-agy-theme][data-newux-theme] button[data-testid^="settings-nav-item-"]
     0px 2px 4px -1px rgba(0, 0, 0, 0.18) !important;
 }
 
+body.theme-dark[data-agy-theme] button[data-testid^="settings-nav-item-"].bg-sidebar-secondary,
+body.theme-dark[data-agy-theme][data-newux-theme] button[data-testid^="settings-nav-item-"].bg-sidebar-secondary {
+  color: var(--color-d-gray-10) !important;
+  box-shadow:
+    inset 0px 1px 0px 0px rgba(255, 255, 255, 0.18),
+    inset 0px 0px 0px 1px rgba(0, 0, 0, 0.34),
+    inset 0px -2px 0px 1px rgba(0, 0, 0, 0.30),
+    inset 0px -2px 4px 0px rgba(0, 0, 0, 0.24),
+    0px 2px 5px -1px rgba(0, 0, 0, 0.36) !important;
+}
+
 body[data-agy-theme] button[data-testid^="settings-nav-item-"].bg-sidebar-secondary > * {
   transform: translateY(-1px);
   transition: transform 80ms ease;
 }
 
-body[data-agy-theme] button[data-testid^="settings-nav-item-"].bg-sidebar-secondary :is(span, svg, .google-symbols) {
+body.theme-light[data-agy-theme] button[data-testid^="settings-nav-item-"].bg-sidebar-secondary :is(span, svg, .google-symbols) {
   color: #FCFAF8 !important;
+  font-weight: 600 !important;
+}
+
+body.theme-dark[data-agy-theme] button[data-testid^="settings-nav-item-"].bg-sidebar-secondary :is(span, svg, .google-symbols) {
+  color: var(--color-d-gray-10) !important;
   font-weight: 600 !important;
 }
 

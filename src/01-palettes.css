@@ -345,23 +345,30 @@ body.theme-dark[data-agy-theme][data-newux-theme="onyx"] {
   --blockquote-bg: var(--color-d-gray-120);
   --blockquote-border: var(--color-d-gray-60);
 
-  /* Rainbow Palette (6-color cycle) */
-  --rainbow-1-fg: var(--color-d-red-20);
-  --rainbow-1-bg: rgba(243, 80, 68, 0.14);
-  --rainbow-1-bg-hover: rgba(243, 80, 68, 0.22);
-  --rainbow-2-fg: var(--color-d-orange-10);
-  --rainbow-2-bg: rgba(235, 106, 20, 0.14);
-  --rainbow-2-bg-hover: rgba(235, 106, 20, 0.22);
-  --rainbow-3-fg: var(--color-d-yellow-20);
-  --rainbow-3-bg: rgba(244, 185, 67, 0.14);
-  --rainbow-3-bg-hover: rgba(244, 185, 67, 0.22);
-  --rainbow-4-fg: var(--color-d-green-20);
-  --rainbow-4-bg: rgba(80, 195, 138, 0.14);
-  --rainbow-4-bg-hover: rgba(80, 195, 138, 0.22);
-  --rainbow-5-fg: var(--color-d-blue-20);
-  --rainbow-5-bg: rgba(77, 178, 209, 0.14);
-  --rainbow-5-bg-hover: rgba(77, 178, 209, 0.22);
-  --rainbow-6-fg: var(--color-d-purple-10);
-  --rainbow-6-bg: rgba(138, 135, 217, 0.14);
-  --rainbow-6-bg-hover: rgba(138, 135, 217, 0.22);
+  /* Rainbow Palette (6-color cycle — Darker Vintage Bauhaus tones for Dark Mode) */
+  --color-d-rainbow-red: #B83A31;
+  --color-d-rainbow-orange: #B5521E;
+  --color-d-rainbow-yellow: #AD7A1B;
+  --color-d-rainbow-green: #267A50;
+  --color-d-rainbow-blue: #286684;
+  --color-d-rainbow-purple: #614482;
+
+  --rainbow-1-fg: var(--color-d-rainbow-red);
+  --rainbow-1-bg: rgba(184, 58, 49, 0.16);
+  --rainbow-1-bg-hover: rgba(184, 58, 49, 0.25);
+  --rainbow-2-fg: var(--color-d-rainbow-orange);
+  --rainbow-2-bg: rgba(181, 82, 30, 0.16);
+  --rainbow-2-bg-hover: rgba(181, 82, 30, 0.25);
+  --rainbow-3-fg: var(--color-d-rainbow-yellow);
+  --rainbow-3-bg: rgba(173, 122, 27, 0.16);
+  --rainbow-3-bg-hover: rgba(173, 122, 27, 0.25);
+  --rainbow-4-fg: var(--color-d-rainbow-green);
+  --rainbow-4-bg: rgba(38, 122, 80, 0.16);
+  --rainbow-4-bg-hover: rgba(38, 122, 80, 0.25);
+  --rainbow-5-fg: var(--color-d-rainbow-blue);
+  --rainbow-5-bg: rgba(40, 102, 132, 0.16);
+  --rainbow-5-bg-hover: rgba(40, 102, 132, 0.25);
+  --rainbow-6-fg: var(--color-d-rainbow-purple);
+  --rainbow-6-bg: rgba(97, 68, 130, 0.16);
+  --rainbow-6-bg-hover: rgba(97, 68, 130, 0.25);
 }
