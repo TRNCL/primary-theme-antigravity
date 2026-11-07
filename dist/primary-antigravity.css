@@ -4,7 +4,7 @@
  * Original Obsidian Theme by Cecilia May (https://github.com/primary-theme/obsidian)
  * Preset: Bauhaus Red (Light #BF3F36) / Bauhaus Yellow (Dark #F4B943)
  * Rainbow Sidebar: Enabled (6-Color Bauhaus Cycle)
- * Built: 2026-11-07T06:39:36.145Z
+ * Built: 2026-11-07T06:54:10.376Z
  * ═══════════════════════════════════════════════════════════════════════════
  */
 
@@ -515,25 +515,25 @@ body.theme-light {
   --primary-btn-shadow:
     inset 0px 1px 0px 0px rgba(255, 255, 255, 0.55),
     inset 0px 0px 0px 1px rgba(67, 46, 20, 0.12),
-    inset 0px -3px 0px 0px rgba(67, 46, 20, 0.12),
+    inset 0px -2px 0px 1px rgba(67, 46, 20, 0.10),
     inset 0px -2px 4px 0px rgba(67, 46, 20, 0.08),
     0px 2px 4px -1.5px rgba(67, 46, 20, 0.10);
 
   --primary-btn-shadow-hover:
     inset 0px 1px 0px 0px rgba(255, 255, 255, 0.75),
     inset 0px 0px 0px 1px rgba(67, 46, 20, 0.16),
-    inset 0px -3px 0px 0px rgba(67, 46, 20, 0.15),
+    inset 0px -2px 0px 1px rgba(67, 46, 20, 0.12),
     0px 3px 6px -1.5px rgba(67, 46, 20, 0.14);
 
   --primary-btn-shadow-active:
-    inset 0px 0px 0px 1px rgba(67, 46, 20, 0.20),
-    inset 0px 2px 5px 0px rgba(67, 46, 20, 0.22),
+    inset 0px 0px 0px 1px rgba(67, 46, 20, 0.18),
+    inset 0px 2px 5px 0px rgba(67, 46, 20, 0.18),
     0px 0px 0px 1px rgba(255, 255, 255, 0.5);
 
   --primary-accent-shadow:
-    inset 0px 1px 0px 0px rgba(255, 255, 255, 0.30),
-    inset 0px -3px 0px 0px #87251E,
-    inset 0px 0px 0px 1px rgba(0, 0, 0, 0.18),
+    inset 0px 1px 0px 0px rgba(255, 255, 255, 0.25),
+    inset 0px 0px 0px 1px rgba(0, 0, 0, 0.16),
+    inset 0px -2px 0px 1px rgba(0, 0, 0, 0.20),
     0px 2px 5px -1px rgba(191, 63, 54, 0.28);
 
   --primary-card-shadow:
@@ -555,26 +555,27 @@ body.theme-light {
 
 body.theme-dark {
   --primary-btn-shadow:
-    inset 0px 1px 0px 0px rgba(255, 255, 255, 0.08),
-    inset 0px -3px 0px 0px #221B15,
-    inset 0px 0px 0px 1px rgba(0, 0, 0, 0.38),
+    inset 0px 1px 0px 0px rgba(255, 255, 255, 0.06),
+    inset 0px 0px 0px 1px rgba(0, 0, 0, 0.35),
+    inset 0px -2px 0px 1px rgba(0, 0, 0, 0.28),
+    inset 0px -2px 4px 0px rgba(0, 0, 0, 0.25),
     0px 2px 5px -1px rgba(0, 0, 0, 0.32);
 
   --primary-btn-shadow-hover:
-    inset 0px 1px 0px 0px rgba(255, 255, 255, 0.12),
-    inset 0px -3px 0px 0px #1C1611,
-    inset 0px 0px 0px 1px rgba(0, 0, 0, 0.44),
+    inset 0px 1px 0px 0px rgba(255, 255, 255, 0.10),
+    inset 0px 0px 0px 1px rgba(0, 0, 0, 0.42),
+    inset 0px -2px 0px 1px rgba(0, 0, 0, 0.32),
     0px 3px 7px -1px rgba(0, 0, 0, 0.40);
 
   --primary-btn-shadow-active:
-    inset 0px 0px 0px 1px rgba(0, 0, 0, 0.48),
-    inset 0px 2.5px 6px 0px rgba(0, 0, 0, 0.58),
+    inset 0px 0px 0px 1px rgba(0, 0, 0, 0.45),
+    inset 0px 2px 6px 0px rgba(0, 0, 0, 0.55),
     0px 0px 0px 1px rgba(255, 255, 255, 0.04);
 
   --primary-accent-shadow:
-    inset 0px 1px 0px 0px rgba(255, 255, 255, 0.36),
-    inset 0px -3px 0px 0px #B57F18,
-    inset 0px 0px 0px 1px rgba(0, 0, 0, 0.28),
+    inset 0px 1px 0px 0px rgba(255, 255, 255, 0.32),
+    inset 0px 0px 0px 1px rgba(0, 0, 0, 0.32),
+    inset 0px -2px 0px 1px rgba(0, 0, 0, 0.28),
     0px 2px 6px -1px rgba(0, 0, 0, 0.45);
 
   --primary-card-shadow:
@@ -670,18 +671,18 @@ body[data-agy-theme] :is(
 /* Composer Bottom-Right Circular Buttons: Voice/Live Pill & Cancel/Stop/Disabled-Send Button */
 body.theme-light[data-agy-theme] [data-testid="voice-live-pill"]:not(:active) {
   box-shadow:
-    inset 0px 1px 0px 0px rgba(255, 255, 255, 0.30),
-    inset 0px -3px 0px 0px rgba(0, 0, 0, 0.34),
+    inset 0px 1.5px 0px 0px rgba(255, 255, 255, 0.28),
     inset 0px 0px 0px 1px rgba(0, 0, 0, 0.22),
+    inset 0px -2px 0px 1px rgba(0, 0, 0, 0.32),
     0px 2px 5px -1px rgba(67, 46, 20, 0.26) !important;
   transition: transform 90ms ease, box-shadow 120ms ease, filter 120ms ease !important;
 }
 
 body.theme-dark[data-agy-theme] [data-testid="voice-live-pill"]:not(:active) {
   box-shadow:
-    inset 0px 1px 0px 0px rgba(255, 255, 255, 0.42),
-    inset 0px -3px 0px 0px rgba(0, 0, 0, 0.36),
+    inset 0px 1.5px 0px 0px rgba(255, 255, 255, 0.42),
     inset 0px 0px 0px 1px rgba(0, 0, 0, 0.38),
+    inset 0px -2px 0px 1px rgba(0, 0, 0, 0.34),
     0px 2px 6px -1px rgba(0, 0, 0, 0.48) !important;
   transition: transform 90ms ease, box-shadow 120ms ease, filter 120ms ease !important;
 }
@@ -706,9 +707,9 @@ body.theme-light[data-agy-theme] :is(
 ) {
   background-color: var(--color-l-gray-30) !important;
   box-shadow:
-    inset 0px 1px 0px 0px rgba(255, 255, 255, 0.85),
-    inset 0px -3px 0px 0px #D5C7B4,
+    inset 0px 1.5px 0px 0px rgba(255, 255, 255, 0.80),
     inset 0px 0px 0px 1px rgba(67, 46, 20, 0.16),
+    inset 0px -2px 0px 1px rgba(67, 46, 20, 0.14),
     0px 2px 4px -1px rgba(67, 46, 20, 0.12) !important;
   transition: transform 90ms ease, box-shadow 120ms ease, background-color 120ms ease !important;
 }
@@ -722,9 +723,9 @@ body.theme-dark[data-agy-theme] :is(
 ) {
   background-color: var(--color-d-gray-60) !important;
   box-shadow:
-    inset 0px 1px 0px 0px rgba(255, 255, 255, 0.12),
-    inset 0px -3px 0px 0px #2B2118,
+    inset 0px 1.5px 0px 0px rgba(255, 255, 255, 0.12),
     inset 0px 0px 0px 1px rgba(0, 0, 0, 0.42),
+    inset 0px -2px 0px 1px rgba(0, 0, 0, 0.34),
     0px 2px 5px -1px rgba(0, 0, 0, 0.38) !important;
   transition: transform 90ms ease, box-shadow 120ms ease, background-color 120ms ease !important;
 }
@@ -1261,18 +1262,18 @@ body[data-agy-theme] .agy-md-table tbody tr:nth-child(even) td {
    ─────────────────────────────────────────────────────────────────────────── */
 body.theme-light {
   --nav-active-shadow:
-    inset 0px 1px 0px 0px rgba(255, 255, 255, 0.90),
-    inset 0px -3px 0px 0px #DFD3C3,
-    inset 0px 0px 0px 1px rgba(67, 46, 20, 0.12),
+    inset 0px 1px 0px 0px rgba(255, 255, 255, 0.85),
+    inset 0px 0px 0px 1px rgba(67, 46, 20, 0.11),
+    inset 0px -2px 0px 1px rgba(67, 46, 20, 0.08),
     0px 2px 3px 0px rgba(67, 46, 20, 0.06);
 }
 
 body.theme-dark {
   --nav-active-shadow:
-    inset 0px 1px 0px 0px rgba(235, 218, 198, 0.09),
-    inset 0px -3px 0px 0px #221B15,
-    inset 0px 0px 0px 1px rgba(0, 0, 0, 0.38),
-    0px 2px 4px 0px rgba(0, 0, 0, 0.24);
+    inset 0px 1px 0px 0px rgba(235, 218, 198, 0.08),
+    inset 0px 0px 0px 1px rgba(0, 0, 0, 0.35),
+    inset 0px -2px 0px 1px rgba(0, 0, 0, 0.28),
+    0px 2px 4px 0px rgba(0, 0, 0, 0.26);
 }
 
 body[data-agy-theme] :is(.agy-sidebar-row, [data-testid="conversation-row-history"]) {
@@ -1420,7 +1421,7 @@ body[data-agy-theme] [data-testid="conversation-list-sidebar"] :is(
 [data-testid="conversation-list-sidebar"] .agy-sidebar-row[data-selected="true"]::before {
   opacity: 1;
   top: 15%;
-  bottom: 21%;
+  bottom: 18%;
   width: 3.5px;
 }
 
@@ -1541,9 +1542,10 @@ body[data-agy-theme][data-newux-theme] button[data-testid^="settings-nav-item-"]
   background-color: var(--settings-nav-color, var(--primary)) !important;
   color: #FCFAF8 !important;
   box-shadow:
-    inset 0px 1px 0px 0px rgba(255, 255, 255, 0.28),
-    inset 0px -3px 0px 0px rgba(0, 0, 0, 0.26),
+    inset 0px 1px 0px 0px rgba(255, 255, 255, 0.26),
     inset 0px 0px 0px 1px rgba(0, 0, 0, 0.18),
+    inset 0px -2px 0px 1px rgba(0, 0, 0, 0.22),
+    inset 0px -2px 4px 0px rgba(0, 0, 0, 0.18),
     0px 2px 4px -1px rgba(0, 0, 0, 0.18) !important;
 }
 
