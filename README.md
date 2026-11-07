@@ -44,7 +44,7 @@ Clone this repository directly into your global Antigravity plugins directory:
 
 ```bash
 mkdir -p ~/.gemini/config/plugins
-git clone https://github.com/TRNCL/primary-theme-antigravity.git ~/.gemini/config/plugins/primary-theme
+git clone https://github.com/<your-username>/primary-theme-antigravity.git ~/.gemini/config/plugins/primary-theme
 ```
 
 Once installed:

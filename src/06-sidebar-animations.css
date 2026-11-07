@@ -164,7 +164,119 @@ body[data-agy-theme] :is(.agy-sidebar-row, [data-testid="conversation-row-histor
 }
 
 /* ───────────────────────────────────────────────────────────────────────────
-   3. POPUP, MENU & DIALOG ANIMATIONS
+   3. SETTINGS MODAL NAVIGATION — COLORFUL 3D TACTILE BUTTONS (Obsidian Primary Fig. 2)
+   Matches Obsidian Primary's .vertical-tab-nav-item multi-color Bauhaus cycle
+   ─────────────────────────────────────────────────────────────────────────── */
+
+/* Default 6-color Bauhaus cycle across Settings nav items (including Projects / Workspaces) */
+[data-testid="settings-sidebar"] .group\/nav-item:nth-child(6n+1) > button[data-testid^="settings-nav-item-"] {
+  --settings-nav-color: var(--rainbow-3-fg);
+  --settings-nav-hover-bg: var(--rainbow-3-bg);
+}
+[data-testid="settings-sidebar"] .group\/nav-item:nth-child(6n+2) > button[data-testid^="settings-nav-item-"] {
+  --settings-nav-color: var(--rainbow-1-fg);
+  --settings-nav-hover-bg: var(--rainbow-1-bg);
+}
+[data-testid="settings-sidebar"] .group\/nav-item:nth-child(6n+3) > button[data-testid^="settings-nav-item-"] {
+  --settings-nav-color: var(--rainbow-5-fg);
+  --settings-nav-hover-bg: var(--rainbow-5-bg);
+}
+[data-testid="settings-sidebar"] .group\/nav-item:nth-child(6n+4) > button[data-testid^="settings-nav-item-"] {
+  --settings-nav-color: var(--rainbow-4-fg);
+  --settings-nav-hover-bg: var(--rainbow-4-bg);
+}
+[data-testid="settings-sidebar"] .group\/nav-item:nth-child(6n+5) > button[data-testid^="settings-nav-item-"] {
+  --settings-nav-color: var(--rainbow-2-fg);
+  --settings-nav-hover-bg: var(--rainbow-2-bg);
+}
+[data-testid="settings-sidebar"] .group\/nav-item:nth-child(6n+6) > button[data-testid^="settings-nav-item-"] {
+  --settings-nav-color: var(--rainbow-6-fg);
+  --settings-nav-hover-bg: var(--rainbow-6-bg);
+}
+
+/* Explicit Bauhaus color mapping for core Settings tabs (Appearance = Red, matching "外观" in Fig. 2) */
+button[data-testid="settings-nav-item-General"] {
+  --settings-nav-color: var(--rainbow-3-fg);       /* Bauhaus Yellow */
+  --settings-nav-hover-bg: var(--rainbow-3-bg);
+}
+button[data-testid="settings-nav-item-App"] {
+  --settings-nav-color: var(--rainbow-2-fg);       /* Bauhaus Orange */
+  --settings-nav-hover-bg: var(--rainbow-2-bg);
+}
+button[data-testid="settings-nav-item-Appearance"] {
+  --settings-nav-color: var(--rainbow-1-fg);       /* Bauhaus Red (matches Fig. 2 外观) */
+  --settings-nav-hover-bg: var(--rainbow-1-bg);
+}
+button[data-testid="settings-nav-item-Shortcuts"] {
+  --settings-nav-color: var(--rainbow-5-fg);       /* Bauhaus Blue */
+  --settings-nav-hover-bg: var(--rainbow-5-bg);
+}
+button[data-testid="settings-nav-item-Notifications"] {
+  --settings-nav-color: var(--rainbow-4-fg);       /* Bauhaus Green */
+  --settings-nav-hover-bg: var(--rainbow-4-bg);
+}
+button[data-testid="settings-nav-item-Models"] {
+  --settings-nav-color: var(--rainbow-6-fg);       /* Bauhaus Purple */
+  --settings-nav-hover-bg: var(--rainbow-6-bg);
+}
+button[data-testid="settings-nav-item-Customizations"] {
+  --settings-nav-color: var(--rainbow-3-fg);       /* Bauhaus Yellow */
+  --settings-nav-hover-bg: var(--rainbow-3-bg);
+}
+button[data-testid="settings-nav-item-Conversations"] {
+  --settings-nav-color: var(--rainbow-5-fg);       /* Bauhaus Blue */
+  --settings-nav-hover-bg: var(--rainbow-5-bg);
+}
+button[data-testid="settings-nav-item-Provide Feedback"] {
+  --settings-nav-color: var(--rainbow-4-fg);       /* Bauhaus Green */
+  --settings-nav-hover-bg: var(--rainbow-4-bg);
+}
+button[data-testid="settings-nav-item-Account"] {
+  --settings-nav-color: var(--rainbow-2-fg);       /* Bauhaus Orange */
+  --settings-nav-hover-bg: var(--rainbow-2-bg);
+}
+
+/* Base transition & radius for Settings navigation buttons */
+body[data-agy-theme] button[data-testid^="settings-nav-item-"] {
+  border-radius: 7px !important;
+  transition: background-color 120ms ease, box-shadow 120ms ease, transform 90ms ease, color 120ms ease !important;
+}
+
+/* Hover state on inactive Settings nav buttons: subtle colorful Bauhaus tint */
+body[data-agy-theme] button[data-testid^="settings-nav-item-"]:not(.bg-sidebar-secondary):hover {
+  background-color: var(--settings-nav-hover-bg, var(--sidebar-muted)) !important;
+}
+
+body[data-agy-theme] button[data-testid^="settings-nav-item-"]:not(.bg-sidebar-secondary):hover span {
+  color: var(--settings-nav-color, var(--foreground)) !important;
+}
+
+/* Active state on Settings nav buttons: solid colorful 3D tactile keycap (Fig. 2) */
+body[data-agy-theme] button[data-testid^="settings-nav-item-"].bg-sidebar-secondary,
+body[data-agy-theme][data-newux-theme] button[data-testid^="settings-nav-item-"].bg-sidebar-secondary {
+  background-color: var(--settings-nav-color, var(--primary)) !important;
+  color: #FCFAF8 !important;
+  box-shadow:
+    inset 0px 1px 0px 0px rgba(255, 255, 255, 0.26),
+    inset 0px 0px 0px 1px rgba(0, 0, 0, 0.18),
+    inset 0px -3px 0px 0px rgba(0, 0, 0, 0.25),
+    inset 0px -2px 4px 0px rgba(0, 0, 0, 0.18),
+    0px 2px 4px -1px rgba(0, 0, 0, 0.18) !important;
+}
+
+body[data-agy-theme] button[data-testid^="settings-nav-item-"].bg-sidebar-secondary :is(span, svg, .google-symbols) {
+  color: #FCFAF8 !important;
+  font-weight: 600 !important;
+}
+
+/* Press physics on Settings nav buttons */
+body[data-agy-theme] button[data-testid^="settings-nav-item-"]:active {
+  transform: translateY(1px) !important;
+  box-shadow: var(--primary-btn-shadow-active) !important;
+}
+
+/* ───────────────────────────────────────────────────────────────────────────
+   4. POPUP, MENU & DIALOG ANIMATIONS
    ─────────────────────────────────────────────────────────────────────────── */
 body[data-agy-theme] :is(.agy-overlay, .agy-fastpick, .agy-dialog) {
   animation: primarySlideUp 220ms cubic-bezier(0.22, 1, 0.36, 1);
