@@ -4,7 +4,7 @@
  * Original Obsidian Theme by Cecilia May (https://github.com/primary-theme/obsidian)
  * Preset: Bauhaus Red (Light #BF3F36) / Bauhaus Yellow (Dark #F4B943)
  * Rainbow Sidebar: Enabled (6-Color Bauhaus Cycle)
- * Built: 2026-11-07T05:58:10.046Z
+ * Built: 2026-11-07T06:04:32.913Z
  * ═══════════════════════════════════════════════════════════════════════════
  */
 
@@ -514,13 +514,13 @@ body.theme-dark ::selection {
 body.theme-light {
   --primary-btn-shadow:
     inset 0px 1px 0px 0px rgba(255, 255, 255, 0.72),
-    inset 0px -2.5px 0px 0px #D5C7B4,
+    inset 0px -3px 0px 0px #D5C7B4,
     inset 0px 0px 0px 1px rgba(67, 46, 20, 0.14),
     0px 2px 4px -1.5px rgba(67, 46, 20, 0.10);
 
   --primary-btn-shadow-hover:
     inset 0px 1px 0px 0px rgba(255, 255, 255, 0.88),
-    inset 0px -2.5px 0px 0px #C8B69E,
+    inset 0px -3px 0px 0px #C8B69E,
     inset 0px 0px 0px 1px rgba(67, 46, 20, 0.18),
     0px 3px 6px -1.5px rgba(67, 46, 20, 0.14);
 
@@ -531,7 +531,7 @@ body.theme-light {
 
   --primary-accent-shadow:
     inset 0px 1px 0px 0px rgba(255, 255, 255, 0.30),
-    inset 0px -2.5px 0px 0px #87251E,
+    inset 0px -3px 0px 0px #87251E,
     inset 0px 0px 0px 1px rgba(0, 0, 0, 0.18),
     0px 2px 5px -1px rgba(191, 63, 54, 0.28);
 
@@ -555,13 +555,13 @@ body.theme-light {
 body.theme-dark {
   --primary-btn-shadow:
     inset 0px 1px 0px 0px rgba(255, 255, 255, 0.08),
-    inset 0px -2.5px 0px 0px #221B15,
+    inset 0px -3px 0px 0px #221B15,
     inset 0px 0px 0px 1px rgba(0, 0, 0, 0.38),
     0px 2px 5px -1px rgba(0, 0, 0, 0.32);
 
   --primary-btn-shadow-hover:
     inset 0px 1px 0px 0px rgba(255, 255, 255, 0.12),
-    inset 0px -2.5px 0px 0px #1C1611,
+    inset 0px -3px 0px 0px #1C1611,
     inset 0px 0px 0px 1px rgba(0, 0, 0, 0.44),
     0px 3px 7px -1px rgba(0, 0, 0, 0.40);
 
@@ -572,7 +572,7 @@ body.theme-dark {
 
   --primary-accent-shadow:
     inset 0px 1px 0px 0px rgba(255, 255, 255, 0.36),
-    inset 0px -2.5px 0px 0px #B57F18,
+    inset 0px -3px 0px 0px #B57F18,
     inset 0px 0px 0px 1px rgba(0, 0, 0, 0.28),
     0px 2px 6px -1px rgba(0, 0, 0, 0.45);
 
@@ -667,75 +667,83 @@ body[data-agy-theme] :is(
 }
 
 /* Composer Bottom-Right Circular Buttons: Voice/Live Pill & Cancel/Stop/Disabled-Send Button */
-body.theme-light[data-agy-theme] [data-testid="voice-live-pill"] {
+body.theme-light[data-agy-theme] [data-testid="voice-live-pill"]:not(:active) {
   box-shadow:
     inset 0px 1px 0px 0px rgba(255, 255, 255, 0.30),
-    inset 0px -2.5px 0px 0px rgba(0, 0, 0, 0.34),
+    inset 0px -3px 0px 0px rgba(0, 0, 0, 0.34),
     inset 0px 0px 0px 1px rgba(0, 0, 0, 0.22),
     0px 2px 5px -1px rgba(67, 46, 20, 0.26) !important;
   transition: transform 90ms ease, box-shadow 120ms ease, filter 120ms ease !important;
 }
 
-body.theme-dark[data-agy-theme] [data-testid="voice-live-pill"] {
+body.theme-dark[data-agy-theme] [data-testid="voice-live-pill"]:not(:active) {
   box-shadow:
     inset 0px 1px 0px 0px rgba(255, 255, 255, 0.42),
-    inset 0px -2.5px 0px 0px rgba(0, 0, 0, 0.36),
+    inset 0px -3px 0px 0px rgba(0, 0, 0, 0.36),
     inset 0px 0px 0px 1px rgba(0, 0, 0, 0.38),
     0px 2px 6px -1px rgba(0, 0, 0, 0.48) !important;
   transition: transform 90ms ease, box-shadow 120ms ease, filter 120ms ease !important;
 }
 
-body[data-agy-theme] [data-testid="voice-live-pill"]:hover {
+body:is(.theme-light, .theme-dark)[data-agy-theme] [data-testid="voice-live-pill"]:hover:not(:active) {
   filter: brightness(1.08);
   transform: translateY(-0.5px);
 }
 
-body[data-agy-theme] [data-testid="voice-live-pill"]:active {
+body:is(.theme-light, .theme-dark)[data-agy-theme] [data-testid="voice-live-pill"]:active {
   box-shadow: var(--primary-btn-shadow-active) !important;
-  transform: translateY(1px) !important;
+  transform: translateY(1.5px) !important;
 }
 
 /* Composer Stop/Cancel Button ([data-testid="input-cancel-button"]) & Secondary/Disabled Send Button */
 body.theme-light[data-agy-theme] :is(
-  [data-testid="input-cancel-button"],
+  [data-testid="input-cancel-button"]:not(:active),
   .agy-send-button:disabled,
   [data-testid="send-button-loading"],
   [data-testid="send-button-pending"],
-  [data-testid="voice-call-agent-mute"]
+  [data-testid="voice-call-agent-mute"]:not(:active)
 ) {
   background-color: var(--color-l-gray-30) !important;
   box-shadow:
     inset 0px 1px 0px 0px rgba(255, 255, 255, 0.85),
-    inset 0px -2.5px 0px 0px #D5C7B4,
+    inset 0px -3px 0px 0px #D5C7B4,
     inset 0px 0px 0px 1px rgba(67, 46, 20, 0.16),
     0px 2px 4px -1px rgba(67, 46, 20, 0.12) !important;
   transition: transform 90ms ease, box-shadow 120ms ease, background-color 120ms ease !important;
 }
 
 body.theme-dark[data-agy-theme] :is(
-  [data-testid="input-cancel-button"],
+  [data-testid="input-cancel-button"]:not(:active),
   .agy-send-button:disabled,
   [data-testid="send-button-loading"],
   [data-testid="send-button-pending"],
-  [data-testid="voice-call-agent-mute"]
+  [data-testid="voice-call-agent-mute"]:not(:active)
 ) {
   background-color: var(--color-d-gray-60) !important;
   box-shadow:
     inset 0px 1px 0px 0px rgba(255, 255, 255, 0.12),
-    inset 0px -2.5px 0px 0px #2B2118,
+    inset 0px -3px 0px 0px #2B2118,
     inset 0px 0px 0px 1px rgba(0, 0, 0, 0.42),
     0px 2px 5px -1px rgba(0, 0, 0, 0.38) !important;
   transition: transform 90ms ease, box-shadow 120ms ease, background-color 120ms ease !important;
 }
 
-body[data-agy-theme] [data-testid="input-cancel-button"]:hover {
-  box-shadow: var(--primary-btn-shadow-hover) !important;
-  transform: translateY(-0.5px);
+/* High-specificity :hover and :active for [data-testid="input-cancel-button"] */
+body.theme-light[data-agy-theme] :is([data-testid="input-cancel-button"], [data-testid="voice-call-agent-mute"]):active {
+  background-color: var(--color-l-gray-30) !important;
+  box-shadow: var(--primary-btn-shadow-active) !important;
+  transform: translateY(1.5px) !important;
 }
 
-body[data-agy-theme] [data-testid="input-cancel-button"]:active {
+body.theme-dark[data-agy-theme] :is([data-testid="input-cancel-button"], [data-testid="voice-call-agent-mute"]):active {
+  background-color: var(--color-d-gray-60) !important;
   box-shadow: var(--primary-btn-shadow-active) !important;
-  transform: translateY(1px) !important;
+  transform: translateY(1.5px) !important;
+}
+
+body:is(.theme-light, .theme-dark)[data-agy-theme] :is([data-testid="input-cancel-button"], [data-testid="voice-call-agent-mute"]):hover:not(:active) {
+  box-shadow: var(--primary-btn-shadow-hover) !important;
+  transform: translateY(-0.5px);
 }
 
 /* Inner red stop square inside [data-testid="input-cancel-button"] */
@@ -748,9 +756,8 @@ body[data-agy-theme] [data-testid="input-cancel-button"] > div {
 }
 
 /* ───────────────────────────────────────────────────────────────────────────
-   1B. B2 OPTICAL CONTENT LIFT (-1.5px on Round Buttons / -1.25px on Tactile Buttons)
-   Compensates for the 2.5px bottom inset shadow lip so icons & labels sit dead-center
-   on the keycap's top face, and drop back to 0px when pressed (:active)
+   1B. OPTICAL CONTENT LIFT (-1px upward in idle/hover, 0px on :active press)
+   Compensates for the 3px bottom inset shadow lip so icons & labels sit centered
    ─────────────────────────────────────────────────────────────────────────── */
 body[data-agy-theme] :is(
   .agy-send-button,
@@ -760,14 +767,15 @@ body[data-agy-theme] :is(
   [data-testid="send-button-pending"],
   [data-testid="voice-call-agent-mute"]
 ) > * {
-  transform: translateY(-1.5px) !important;
+  transform: translateY(-1px) !important;
   transition: transform 80ms ease !important;
 }
 
 body[data-agy-theme] :is(
   .agy-send-button,
   [data-testid="voice-live-pill"],
-  [data-testid="input-cancel-button"]
+  [data-testid="input-cancel-button"],
+  [data-testid="voice-call-agent-mute"]
 ):active > * {
   transform: translateY(0px) !important;
 }
@@ -782,7 +790,7 @@ body[data-agy-theme] :is(
   button[class*="bg-primary"]:not([role="switch"]):not(.agy-send-button),
   button.proceed-button
 ):not([class*="bg-transparent"]):not(:disabled) > * {
-  transform: translateY(-1.25px);
+  transform: translateY(-1px);
   transition: transform 80ms ease;
 }
 
@@ -1328,12 +1336,12 @@ body[data-agy-theme] .agy-md-table tbody tr:nth-child(even) td {
 }
 
 /* ───────────────────────────────────────────────────────────────────────────
-   1. SIDEBAR ROW TACTILE ACTIVE STATE (B2 Balanced: 2.5px Lip + 1.25px Optical Lift)
+   1. SIDEBAR ROW TACTILE ACTIVE STATE (3px Bottom Lip + 1px Optical Lift)
    ─────────────────────────────────────────────────────────────────────────── */
 body.theme-light {
   --nav-active-shadow:
     inset 0px 1px 0px 0px rgba(255, 255, 255, 0.90),
-    inset 0px -2.5px 0px 0px #DFD3C3,
+    inset 0px -3px 0px 0px #DFD3C3,
     inset 0px 0px 0px 1px rgba(67, 46, 20, 0.12),
     0px 2px 3px 0px rgba(67, 46, 20, 0.06);
 }
@@ -1341,7 +1349,7 @@ body.theme-light {
 body.theme-dark {
   --nav-active-shadow:
     inset 0px 1px 0px 0px rgba(235, 218, 198, 0.09),
-    inset 0px -2.5px 0px 0px #221B15,
+    inset 0px -3px 0px 0px #221B15,
     inset 0px 0px 0px 1px rgba(0, 0, 0, 0.38),
     0px 2px 4px 0px rgba(0, 0, 0, 0.24);
 }
@@ -1362,9 +1370,9 @@ body[data-agy-theme] [data-testid="conversation-row-history"][data-selected="tru
   box-shadow: var(--nav-active-shadow) !important;
 }
 
-/* Lift text/timestamp & action icons inside selected sidebar row by 1.25px to center on top face */
+/* Lift text/timestamp & action icons inside selected sidebar row by 1px to center on top face */
 body[data-agy-theme] :is(.agy-sidebar-row, [data-testid="conversation-row-history"])[data-selected="true"] > div {
-  transform: translateY(-1.25px);
+  transform: translateY(-1px);
 }
 
 /* ───────────────────────────────────────────────────────────────────────────
@@ -1490,8 +1498,8 @@ body[data-agy-theme] [data-testid="conversation-list-sidebar"] :is(
 
 [data-testid="conversation-list-sidebar"] .agy-sidebar-row[data-selected="true"]::before {
   opacity: 1;
-  top: 14%;
-  bottom: 23%;
+  top: 15%;
+  bottom: 21%;
   width: 3.5px;
 }
 
@@ -1613,13 +1621,13 @@ body[data-agy-theme][data-newux-theme] button[data-testid^="settings-nav-item-"]
   color: #FCFAF8 !important;
   box-shadow:
     inset 0px 1px 0px 0px rgba(255, 255, 255, 0.28),
-    inset 0px -2.5px 0px 0px rgba(0, 0, 0, 0.26),
+    inset 0px -3px 0px 0px rgba(0, 0, 0, 0.26),
     inset 0px 0px 0px 1px rgba(0, 0, 0, 0.18),
     0px 2px 4px -1px rgba(0, 0, 0, 0.18) !important;
 }
 
 body[data-agy-theme] button[data-testid^="settings-nav-item-"].bg-sidebar-secondary > * {
-  transform: translateY(-1.25px);
+  transform: translateY(-1px);
   transition: transform 80ms ease;
 }
 
