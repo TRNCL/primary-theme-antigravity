@@ -4,7 +4,7 @@
  * Original Obsidian Theme by Cecilia May (https://github.com/primary-theme/obsidian)
  * Preset: Bauhaus Red (Light #BF3F36) / Bauhaus Yellow (Dark #F4B943)
  * Rainbow Sidebar: Enabled (6-Color Bauhaus Cycle)
- * Built: 2026-11-07T04:58:12.487Z
+ * Built: 2026-11-07T05:01:15.811Z
  * ═══════════════════════════════════════════════════════════════════════════
  */
 
@@ -1268,19 +1268,21 @@ body[data-agy-theme] .agy-md-table tbody tr:nth-child(even) td {
 }
 
 /* ───────────────────────────────────────────────────────────────────────────
-   1. SIDEBAR ROW TACTILE ACTIVE STATE (Obsidian Primary Fig. 3 Fine Colored Outline)
+   1. SIDEBAR ROW TACTILE ACTIVE STATE
    ─────────────────────────────────────────────────────────────────────────── */
 body.theme-light {
   --nav-active-shadow:
-    inset 0px 0px 0px 1.25px var(--item-rainbow-fg, var(--color-l-yellow-30)),
-    inset 0px -3.25px 0px 0px rgba(67, 46, 20, 0.09),
+    inset 0px 1px 0px 0px rgba(255, 255, 255, 0.85),
+    inset 0px 0px 0px 1px rgba(67, 46, 20, 0.11),
+    inset 0px -2px 0px 1px rgba(67, 46, 20, 0.08),
     0px 2px 3px 0px rgba(67, 46, 20, 0.06);
 }
 
 body.theme-dark {
   --nav-active-shadow:
-    inset 0px 0px 0px 1.25px var(--item-rainbow-fg, var(--color-d-yellow-30)),
-    inset 0px -3.25px 0px 0px rgba(0, 0, 0, 0.36),
+    inset 0px 1px 0px 0px rgba(235, 218, 198, 0.08),
+    inset 0px 0px 0px 1px rgba(0, 0, 0, 0.35),
+    inset 0px -2px 0px 1px rgba(0, 0, 0, 0.28),
     0px 2px 4px 0px rgba(0, 0, 0, 0.26);
 }
 
@@ -1382,11 +1384,11 @@ body.theme-dark[data-agy-theme] button[data-testid^="settings-nav-item-"]:not(.b
   --item-rainbow-bg-hover: var(--rainbow-6-bg-hover);
 }
 
-/* Project / Folder Headers in Sidebar (e.g. 📁 agy): Clean idle state + Fig. 3 Fine Colored Border on Hover/Focus */
+/* Project / Folder Headers in Sidebar (e.g. 📁 agy): Clean understated look */
 body[data-agy-theme] [data-testid="conversation-list-sidebar"] button[data-testid="project-header"] {
   border-radius: 7px !important;
   font-weight: 600 !important;
-  transition: background-color 140ms ease, box-shadow 140ms ease, color 140ms ease !important;
+  transition: background-color 140ms ease, color 140ms ease !important;
 }
 
 body[data-agy-theme] [data-testid="conversation-list-sidebar"] button[data-testid="project-header"] .google-symbols {
@@ -1395,12 +1397,9 @@ body[data-agy-theme] [data-testid="conversation-list-sidebar"] button[data-testi
 
 body[data-agy-theme] [data-testid="conversation-list-sidebar"] :is(
   button[data-testid="project-header"]:hover,
-  button[data-testid="project-header"]:focus-visible,
   .group\/header:hover button[data-testid="project-header"]
 ) {
-  background-color: var(--onyx-selected) !important;
-  color: var(--item-rainbow-fg, var(--foreground)) !important;
-  box-shadow: var(--nav-active-shadow) !important;
+  background-color: var(--item-rainbow-bg, var(--sidebar-muted)) !important;
 }
 
 /* Conversation Rows in Sidebar: Subtle Rainbow Left Pill Indicator & Hover Tint */
