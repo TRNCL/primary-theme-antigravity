@@ -5,15 +5,16 @@
 
 body.theme-light {
   --primary-btn-shadow:
-    inset 0px 1px 0px 0px rgba(255, 255, 255, 0.72),
-    inset 0px -3px 0px 0px #D5C7B4,
-    inset 0px 0px 0px 1px rgba(67, 46, 20, 0.14),
+    inset 0px 1px 0px 0px rgba(255, 255, 255, 0.55),
+    inset 0px 0px 0px 1px rgba(67, 46, 20, 0.12),
+    inset 0px -3px 0px 0px rgba(67, 46, 20, 0.12),
+    inset 0px -2px 4px 0px rgba(67, 46, 20, 0.08),
     0px 2px 4px -1.5px rgba(67, 46, 20, 0.10);
 
   --primary-btn-shadow-hover:
-    inset 0px 1px 0px 0px rgba(255, 255, 255, 0.88),
-    inset 0px -3px 0px 0px #C8B69E,
-    inset 0px 0px 0px 1px rgba(67, 46, 20, 0.18),
+    inset 0px 1px 0px 0px rgba(255, 255, 255, 0.75),
+    inset 0px 0px 0px 1px rgba(67, 46, 20, 0.16),
+    inset 0px -3px 0px 0px rgba(67, 46, 20, 0.15),
     0px 3px 6px -1.5px rgba(67, 46, 20, 0.14);
 
   --primary-btn-shadow-active:
@@ -332,11 +333,11 @@ body[data-agy-theme][data-newux-theme] :is(input.agy-field, .agy-field, textarea
 }
 
 /* ───────────────────────────────────────────────────────────────────────────
-   3. CHAT BUBBLES, CARDS, ARTIFACTS & SETTINGS CONTAINERS
+   3. CHAT BUBBLES, CARDS, ARTIFACTS & DIALOGS
    ─────────────────────────────────────────────────────────────────────────── */
 body[data-agy-theme][data-newux-theme] :is(
   .agy-user-bubble,
-  .agy-card:not(.divide-y),
+  .agy-card,
   .artifact-card,
   .agy-takeover-card,
   .agy-tip-card
@@ -348,86 +349,6 @@ body[data-agy-theme][data-newux-theme] :is(
 
 body[data-agy-theme][data-newux-theme] .artifact-card:hover {
   box-shadow: var(--primary-btn-shadow-hover) !important;
-}
-
-/* Settings Modal Group Cards (.agy-card.divide-y) — Obsidian Primary Fig. 2 Warm Flat Panel */
-body.theme-light[data-agy-theme] .agy-card.divide-y {
-  background-color: var(--color-l-gray-30) !important;
-  box-shadow: none !important;
-  border-color: transparent !important;
-  border-radius: 10px !important;
-  padding-inline: 4px !important;
-}
-
-body.theme-dark[data-agy-theme] .agy-card.divide-y {
-  background-color: var(--color-d-gray-110) !important;
-  box-shadow: none !important;
-  border-color: transparent !important;
-  border-radius: 10px !important;
-  padding-inline: 4px !important;
-}
-
-body.theme-light[data-agy-theme] .agy-card.divide-y > :not([hidden]) ~ :not([hidden]) {
-  border-color: rgba(67, 46, 20, 0.08) !important;
-}
-
-body.theme-dark[data-agy-theme] .agy-card.divide-y > :not([hidden]) ~ :not([hidden]) {
-  border-color: rgba(235, 218, 198, 0.07) !important;
-}
-
-/* Crisp 3D Keycap Controls inside Settings Cards (Selects, Buttons, Color Hex Pills — Fig. 2) */
-body.theme-light[data-agy-theme] .agy-card.divide-y :is(
-  .agy-select-trigger,
-  button:not([role="switch"]):not([data-slot]):not([class*="bg-transparent"]):not([class*="bg-primary"]),
-  input[type="text"]
-) {
-  background-color: var(--color-l-gray-10) !important;
-  color: var(--foreground) !important;
-  border-color: transparent !important;
-  border-radius: 7px !important;
-  box-shadow: var(--primary-btn-shadow) !important;
-}
-
-body.theme-dark[data-agy-theme] .agy-card.divide-y :is(
-  .agy-select-trigger,
-  button:not([role="switch"]):not([data-slot]):not([class*="bg-transparent"]):not([class*="bg-primary"]),
-  input[type="text"]
-) {
-  background-color: var(--color-d-gray-60) !important;
-  color: var(--foreground) !important;
-  border-color: transparent !important;
-  border-radius: 7px !important;
-  box-shadow: var(--primary-btn-shadow) !important;
-}
-
-body[data-agy-theme] .agy-card.divide-y :is(
-  .agy-select-trigger,
-  button:not([role="switch"]):not([data-slot]):not([class*="bg-transparent"]):not([class*="bg-primary"]),
-  input[type="text"]
-):hover {
-  box-shadow: var(--primary-btn-shadow-hover) !important;
-}
-
-body.theme-light[data-agy-theme] .agy-card.divide-y [data-slot="toggle-group"] {
-  background-color: var(--color-l-gray-40) !important;
-  border-color: transparent !important;
-}
-
-body.theme-dark[data-agy-theme] .agy-card.divide-y [data-slot="toggle-group"] {
-  background-color: var(--color-d-gray-130) !important;
-  border-color: transparent !important;
-}
-
-body.theme-light[data-agy-theme] .agy-card.divide-y [data-slot="toggle-group"] > button[data-pressed] {
-  background-color: var(--color-l-gray-10) !important;
-  box-shadow: var(--primary-btn-shadow) !important;
-  border-radius: 6px !important;
-}
-
-body.theme-dark[data-agy-theme] .agy-card.divide-y [data-slot="toggle-group"] > button[data-pressed] {
-  background-color: var(--color-d-gray-60) !important;
-  box-shadow: var(--primary-btn-shadow) !important;
-  border-radius: 6px !important;
 }
 
 /* ───────────────────────────────────────────────────────────────────────────
