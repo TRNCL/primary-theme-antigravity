@@ -1,0 +1,398 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   03. TACTILE 3D TOY COMPONENTS & PRESS PHYSICS
+   Buttons, Composer, Inputs, Bubbles, Cards, Toggles & Pills
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+body.theme-light {
+  --primary-btn-shadow:
+    inset 0px 1px 0px 0px rgba(255, 255, 255, 0.55),
+    inset 0px 0px 0px 1px rgba(67, 46, 20, 0.12),
+    inset 0px -2px 0px 1px rgba(67, 46, 20, 0.10),
+    inset 0px -2px 4px 0px rgba(67, 46, 20, 0.08),
+    0px 2px 4px -1.5px rgba(67, 46, 20, 0.10);
+
+  --primary-btn-shadow-hover:
+    inset 0px 1px 0px 0px rgba(255, 255, 255, 0.75),
+    inset 0px 0px 0px 1px rgba(67, 46, 20, 0.16),
+    inset 0px -2px 0px 1px rgba(67, 46, 20, 0.12),
+    0px 3px 6px -1.5px rgba(67, 46, 20, 0.14);
+
+  --primary-btn-shadow-active:
+    inset 0px 0px 0px 1px rgba(67, 46, 20, 0.18),
+    inset 0px 2px 5px 0px rgba(67, 46, 20, 0.18),
+    0px 0px 0px 1px rgba(255, 255, 255, 0.5);
+
+  --primary-accent-shadow:
+    inset 0px 1px 0px 0px rgba(255, 255, 255, 0.25),
+    inset 0px 0px 0px 1px rgba(0, 0, 0, 0.16),
+    inset 0px -2px 0px 1px rgba(0, 0, 0, 0.20),
+    0px 2px 5px -1px rgba(191, 63, 54, 0.28);
+
+  --primary-card-shadow:
+    inset 0px 0px 0px 1px rgba(67, 46, 20, 0.10),
+    inset 0px 1px 0px 0px rgba(255, 255, 255, 0.70),
+    inset 0px -2px 0px 0px rgba(67, 46, 20, 0.06),
+    0px 2px 5px -1px rgba(67, 46, 20, 0.05);
+
+  --primary-composer-frame-shadow:
+    inset 0px 1px 2px rgba(67, 46, 20, 0.05),
+    0px 0px 0px 4px var(--onyx-frame),
+    0px 0px 0px 5px var(--border),
+    0px 10px 24px -8px rgba(67, 46, 20, 0.10);
+
+  --primary-toggle-shadow:
+    inset 0 3px 6px rgba(67, 46, 20, 0.14),
+    inset 0 0 0 1px rgba(67, 46, 20, 0.12);
+}
+
+body.theme-dark {
+  --primary-btn-shadow:
+    inset 0px 1px 0px 0px rgba(255, 255, 255, 0.06),
+    inset 0px 0px 0px 1px rgba(0, 0, 0, 0.35),
+    inset 0px -2px 0px 1px rgba(0, 0, 0, 0.28),
+    inset 0px -2px 4px 0px rgba(0, 0, 0, 0.25),
+    0px 2px 5px -1px rgba(0, 0, 0, 0.32);
+
+  --primary-btn-shadow-hover:
+    inset 0px 1px 0px 0px rgba(255, 255, 255, 0.10),
+    inset 0px 0px 0px 1px rgba(0, 0, 0, 0.42),
+    inset 0px -2px 0px 1px rgba(0, 0, 0, 0.32),
+    0px 3px 7px -1px rgba(0, 0, 0, 0.40);
+
+  --primary-btn-shadow-active:
+    inset 0px 0px 0px 1px rgba(0, 0, 0, 0.45),
+    inset 0px 2px 6px 0px rgba(0, 0, 0, 0.55),
+    0px 0px 0px 1px rgba(255, 255, 255, 0.04);
+
+  --primary-accent-shadow:
+    inset 0px 1px 0px 0px rgba(255, 255, 255, 0.32),
+    inset 0px 0px 0px 1px rgba(0, 0, 0, 0.32),
+    inset 0px -2px 0px 1px rgba(0, 0, 0, 0.28),
+    0px 2px 6px -1px rgba(0, 0, 0, 0.45);
+
+  --primary-card-shadow:
+    inset 0px 0px 0px 1px rgba(0, 0, 0, 0.32),
+    inset 0px 1px 0px 0px rgba(235, 218, 198, 0.06),
+    inset 0px -2px 0px 0px rgba(0, 0, 0, 0.26),
+    0px 2px 6px -1px rgba(0, 0, 0, 0.26);
+
+  --primary-composer-frame-shadow:
+    inset 0px 1px 2px rgba(0, 0, 0, 0.35),
+    0px 0px 0px 4px var(--onyx-frame),
+    0px 0px 0px 5px var(--border),
+    0px 14px 32px -10px rgba(0, 0, 0, 0.48);
+
+  --primary-toggle-shadow:
+    inset 0 3px 7px rgba(0, 0, 0, 0.38),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.07);
+}
+
+/* ───────────────────────────────────────────────────────────────────────────
+   1. TACTILE BUTTONS (.agy-button, .agy-send-button, surface buttons)
+   ─────────────────────────────────────────────────────────────────────────── */
+body[data-agy-theme][data-newux-theme] :is(.agy-button-xs, .agy-button-sm, .agy-button-md, .agy-button-lg):not([class*="rounded-none"]) {
+  border-radius: var(--button-radius) !important;
+  transition: transform 90ms ease, box-shadow 120ms ease, background-color 120ms ease !important;
+}
+
+/* Surface / Secondary / Outlined Buttons */
+body[data-agy-theme] :is(
+  button.surface-opaque,
+  .agy-button-xs[class*="bg-"],
+  .agy-button-sm[class*="bg-"],
+  .agy-button-md[class*="bg-"],
+  .agy-button-lg[class*="bg-"],
+  .agy-select-trigger,
+  [data-testid="empty-file-open-button"]
+):not([class*="bg-transparent"]):not([class*="bg-primary"]):not(:disabled) {
+  box-shadow: var(--primary-btn-shadow) !important;
+}
+
+body[data-agy-theme] :is(
+  button.surface-opaque,
+  .agy-button-xs[class*="bg-"],
+  .agy-button-sm[class*="bg-"],
+  .agy-button-md[class*="bg-"],
+  .agy-button-lg[class*="bg-"],
+  .agy-select-trigger,
+  [data-testid="empty-file-open-button"]
+):not([class*="bg-transparent"]):not([class*="bg-primary"]):not(:disabled):hover {
+  box-shadow: var(--primary-btn-shadow-hover) !important;
+}
+
+body[data-agy-theme] :is(
+  button.surface-opaque,
+  .agy-button-xs[class*="bg-"],
+  .agy-button-sm[class*="bg-"],
+  .agy-button-md[class*="bg-"],
+  .agy-button-lg[class*="bg-"],
+  .agy-select-trigger,
+  [data-testid="empty-file-open-button"]
+):not([class*="bg-transparent"]):not(:disabled):active {
+  box-shadow: var(--primary-btn-shadow-active) !important;
+  transform: translateY(1px) !important;
+}
+
+/* Primary / Send / CTA Accent Buttons & Composer Round Action Buttons */
+body[data-agy-theme] :is(
+  .agy-send-button:not(:disabled),
+  button[class*="bg-primary"]:not([role="switch"]):not(:disabled),
+  button.proceed-button:not(:disabled)
+) {
+  box-shadow: var(--primary-accent-shadow) !important;
+  transition: transform 90ms ease, box-shadow 120ms ease, filter 120ms ease !important;
+}
+
+body[data-agy-theme] :is(
+  .agy-send-button:not(:disabled),
+  button[class*="bg-primary"]:not([role="switch"]):not(:disabled),
+  button.proceed-button:not(:disabled)
+):hover {
+  filter: brightness(1.06);
+}
+
+body[data-agy-theme] :is(
+  .agy-send-button:not(:disabled),
+  button[class*="bg-primary"]:not([role="switch"]):not(:disabled),
+  button.proceed-button:not(:disabled)
+):active {
+  box-shadow: var(--primary-btn-shadow-active) !important;
+  transform: translateY(1.5px) !important;
+}
+
+/* Composer Bottom-Right Circular Buttons: Voice/Live Pill & Cancel/Stop/Disabled-Send Button */
+body.theme-light[data-agy-theme] [data-testid="voice-live-pill"] {
+  box-shadow:
+    inset 0px 1.5px 0px 0px rgba(255, 255, 255, 0.28),
+    inset 0px 0px 0px 1px rgba(0, 0, 0, 0.22),
+    inset 0px -2.5px 0px 1px rgba(0, 0, 0, 0.32),
+    0px 2px 5px -1px rgba(67, 46, 20, 0.26) !important;
+  transition: transform 90ms ease, box-shadow 120ms ease, filter 120ms ease !important;
+}
+
+body.theme-dark[data-agy-theme] [data-testid="voice-live-pill"] {
+  box-shadow:
+    inset 0px 1.5px 0px 0px rgba(255, 255, 255, 0.42),
+    inset 0px 0px 0px 1px rgba(0, 0, 0, 0.38),
+    inset 0px -2.5px 0px 1px rgba(0, 0, 0, 0.34),
+    0px 2px 6px -1px rgba(0, 0, 0, 0.48) !important;
+  transition: transform 90ms ease, box-shadow 120ms ease, filter 120ms ease !important;
+}
+
+body[data-agy-theme] [data-testid="voice-live-pill"]:hover {
+  filter: brightness(1.08);
+  transform: translateY(-0.5px);
+}
+
+body[data-agy-theme] [data-testid="voice-live-pill"]:active {
+  box-shadow: var(--primary-btn-shadow-active) !important;
+  transform: translateY(1px) !important;
+}
+
+/* Composer Stop/Cancel Button ([data-testid="input-cancel-button"]) & Secondary/Disabled Send Button */
+body.theme-light[data-agy-theme] :is(
+  [data-testid="input-cancel-button"],
+  .agy-send-button:disabled,
+  [data-testid="send-button-loading"],
+  [data-testid="send-button-pending"],
+  [data-testid="voice-call-agent-mute"]
+) {
+  background-color: var(--color-l-gray-30) !important;
+  box-shadow:
+    inset 0px 1.5px 0px 0px rgba(255, 255, 255, 0.80),
+    inset 0px 0px 0px 1px rgba(67, 46, 20, 0.16),
+    inset 0px -2.5px 0px 1px rgba(67, 46, 20, 0.14),
+    0px 2px 4px -1px rgba(67, 46, 20, 0.12) !important;
+  transition: transform 90ms ease, box-shadow 120ms ease, background-color 120ms ease !important;
+}
+
+body.theme-dark[data-agy-theme] :is(
+  [data-testid="input-cancel-button"],
+  .agy-send-button:disabled,
+  [data-testid="send-button-loading"],
+  [data-testid="send-button-pending"],
+  [data-testid="voice-call-agent-mute"]
+) {
+  background-color: var(--color-d-gray-60) !important;
+  box-shadow:
+    inset 0px 1.5px 0px 0px rgba(255, 255, 255, 0.12),
+    inset 0px 0px 0px 1px rgba(0, 0, 0, 0.42),
+    inset 0px -2.5px 0px 1px rgba(0, 0, 0, 0.34),
+    0px 2px 5px -1px rgba(0, 0, 0, 0.38) !important;
+  transition: transform 90ms ease, box-shadow 120ms ease, background-color 120ms ease !important;
+}
+
+body[data-agy-theme] [data-testid="input-cancel-button"]:hover {
+  box-shadow: var(--primary-btn-shadow-hover) !important;
+  transform: translateY(-0.5px);
+}
+
+body[data-agy-theme] [data-testid="input-cancel-button"]:active {
+  box-shadow: var(--primary-btn-shadow-active) !important;
+  transform: translateY(1px) !important;
+}
+
+/* Inner red stop square inside [data-testid="input-cancel-button"] */
+body[data-agy-theme] [data-testid="input-cancel-button"] > div {
+  background-color: var(--color-l-red-30, #BF3F36) !important;
+  border-radius: 2px !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.32),
+    0 1px 1.5px rgba(67, 46, 20, 0.18) !important;
+}
+
+/* ───────────────────────────────────────────────────────────────────────────
+   2. COMPOSER & TEXT INPUTS (.surface-composer, .agy-field, .agy-textarea)
+   ─────────────────────────────────────────────────────────────────────────── */
+body[data-agy-theme][data-newux-theme="onyx"] .surface-composer {
+  background-color: var(--onyx-frame) !important;
+  box-shadow: var(--primary-composer-frame-shadow) !important;
+  border-radius: 16px !important;
+}
+
+body[data-agy-theme][data-newux-theme="onyx"] .surface-composer > .surface-composer-card {
+  background-color: var(--card) !important;
+  box-shadow: var(--primary-card-shadow) !important;
+  border-radius: 14px !important;
+}
+
+body[data-agy-theme][data-newux-theme="onyx"] .surface-composer:focus-within > .surface-composer-card {
+  box-shadow:
+    var(--primary-card-shadow),
+    0 0 0 2px var(--focus-ring-color) !important;
+}
+
+body[data-agy-theme][data-newux-theme] :is(input.agy-field, .agy-field) {
+  border-radius: var(--button-radius) !important;
+  box-shadow: var(--primary-btn-shadow) !important;
+  background-color: var(--secondary) !important;
+}
+
+body[data-agy-theme][data-newux-theme] :is(input.agy-field, .agy-field, textarea.agy-textarea):focus {
+  background-color: var(--card) !important;
+  box-shadow: var(--primary-btn-shadow-active) !important;
+}
+
+/* ───────────────────────────────────────────────────────────────────────────
+   3. CHAT BUBBLES, CARDS, ARTIFACTS & DIALOGS
+   ─────────────────────────────────────────────────────────────────────────── */
+body[data-agy-theme][data-newux-theme] :is(
+  .agy-user-bubble,
+  .agy-card,
+  .artifact-card,
+  .agy-takeover-card,
+  .agy-tip-card
+) {
+  background-color: var(--card) !important;
+  box-shadow: var(--primary-card-shadow) !important;
+  border-radius: 12px !important;
+}
+
+body[data-agy-theme][data-newux-theme] .artifact-card:hover {
+  box-shadow: var(--primary-btn-shadow-hover) !important;
+}
+
+/* ───────────────────────────────────────────────────────────────────────────
+   4. TOGGLE SWITCHES & SEGMENTED CONTROLS
+   ─────────────────────────────────────────────────────────────────────────── */
+body[data-agy-theme] button[role="switch"],
+body[data-agy-theme] [role="switch"] {
+  box-shadow: var(--primary-toggle-shadow) !important;
+}
+
+body.theme-light[data-agy-theme] [role="switch"][aria-checked="true"] {
+  background-color: var(--color-l-green-30) !important;
+  box-shadow:
+    inset 0 2px 5px rgba(0, 0, 0, 0.22),
+    inset 0 0 0 1px rgba(0, 0, 0, 0.16),
+    0 1px 0 rgba(255, 255, 255, 0.65) !important;
+}
+
+body.theme-dark[data-agy-theme] [role="switch"][aria-checked="true"] {
+  background-color: var(--color-d-green-30) !important;
+  box-shadow:
+    inset 0 2px 5px rgba(0, 0, 0, 0.38),
+    inset 0 0 0 1px rgba(0, 0, 0, 0.32),
+    0 1px 0 rgba(255, 255, 255, 0.08) !important;
+}
+
+body[data-agy-theme] [role="switch"] > span {
+  background-color: #FCFAF8 !important;
+  box-shadow:
+    inset 0 1px 0 1px rgba(255, 255, 255, 0.9),
+    inset 0 0 0 1px rgba(0, 0, 0, 0.16),
+    0 2px 3px rgba(0, 0, 0, 0.22) !important;
+}
+
+body[data-agy-theme][data-newux-theme="onyx"] [data-slot="toggle-group"] {
+  background-color: var(--onyx-well) !important;
+  box-shadow: var(--primary-toggle-shadow) !important;
+  border-radius: 10px !important;
+}
+
+body[data-agy-theme][data-newux-theme="onyx"] [data-slot="toggle-group"] > button[data-pressed] {
+  background-color: var(--onyx-key) !important;
+  box-shadow: var(--primary-btn-shadow) !important;
+  border-radius: 8px !important;
+}
+
+/* ───────────────────────────────────────────────────────────────────────────
+   5. KEYBOARD :FOCUS-VISIBLE — PURE 3D TACTILE KEYCAP LIFT (NO COLORED BORDER)
+   Replaces the protruding outline with a clean 3D keycap elevation (zero border, zero clipping)
+   ─────────────────────────────────────────────────────────────────────────── */
+
+/* 1. Kill the protruding outer outline that gets clipped by overflow:hidden containers */
+body[data-agy-theme][data-newux-theme] :is(button, input, select, textarea, a, [tabindex]):focus-visible:not(.no-focus-ring),
+body[data-agy-theme][data-newux-theme] .focus-within-ring:focus-within:not(.no-focus-ring),
+body[data-agy-theme][data-newux-theme] .agy-button.no-focus-ring:focus-visible,
+body[data-agy-theme] :is(button, input, select, textarea, a, [tabindex]):focus-visible {
+  outline: none !important;
+  outline-offset: 0 !important;
+  --tw-ring-offset-shadow: 0 0 #0000 !important;
+  --tw-ring-shadow: 0 0 #0000 !important;
+}
+
+/* 2. Apply pure 3D Tactile Keycap elevation on focused buttons & controls (no colored ring) */
+body[data-agy-theme][data-newux-theme] :is(
+  button:not([role="switch"]):not([class*="bg-primary"]):not(.agy-send-button),
+  a:not(.absolute),
+  [role="button"],
+  [role="tab"],
+  [role="menuitem"],
+  [tabindex]:not([tabindex="-1"]):not(div.surface-composer *)
+):focus-visible {
+  background-color: var(--card) !important;
+  box-shadow: var(--primary-btn-shadow-hover) !important;
+}
+
+/* 3. Sidebar Conversation Row Link (<a class="absolute inset-0"> inside .agy-sidebar-row) */
+body[data-agy-theme][data-newux-theme] :is(.agy-sidebar-row, [data-testid="conversation-row-history"]) > a:focus-visible {
+  outline: none !important;
+  box-shadow: var(--nav-active-shadow) !important;
+  border-radius: 7px !important;
+}
+
+/* 4. Filled Accent Buttons (.agy-send-button, bg-primary, voice-live-pill) when keyboard focused */
+body[data-agy-theme][data-newux-theme] :is(
+  .agy-send-button:not(:disabled),
+  button[class*="bg-primary"]:not([role="switch"]):not(:disabled),
+  button.proceed-button:not(:disabled)
+):focus-visible {
+  box-shadow: var(--primary-accent-shadow) !important;
+  filter: brightness(1.08);
+}
+
+/* 5. Toggle Switches ([role="switch"]) when keyboard focused */
+body[data-agy-theme][data-newux-theme] [role="switch"]:focus-visible {
+  box-shadow: var(--primary-toggle-shadow) !important;
+}
+
+/* 6. Inputs, Textareas & Focus-Within Containers */
+body[data-agy-theme][data-newux-theme] :is(
+  input:not([type="checkbox"]):not([type="radio"]),
+  select,
+  textarea,
+  .focus-within-ring:focus-within:not(.no-focus-ring)
+):focus-visible {
+  box-shadow: var(--primary-btn-shadow-hover) !important;
+}

@@ -1,0 +1,129 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   02. TYPOGRAPHY & BAUHAUS SEMANTIC EMPHASIS
+   Red Bold, Blue Italic, Yellow Internal Links, Green External Links
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+body.theme-light,
+body.theme-dark {
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif !important;
+  --font-mono: "Cascadia Code", "JetBrains Mono", "SF Mono", Menlo, Monaco, Consolas, monospace !important;
+  font-family: var(--font-sans) !important;
+  font-feature-settings: "calt" 1, "case" 0, "ccmp" 1, "ss03" 1, "cv01" 1, "cv05" 1, "cv06" 1, "cv11" 1;
+  -webkit-font-smoothing: antialiased;
+}
+
+code,
+pre,
+kbd,
+samp,
+.font-mono,
+.code-block {
+  font-family: var(--font-mono) !important;
+  font-feature-settings: "calt" 1, "ss01" 1, "ss02" 1, "ss03" 1, "ss05" 1, "ss19" 1, "zero" 1;
+}
+
+/* Text Selection (Warm Vintage Highlight) */
+body.theme-light ::selection {
+  background-color: rgba(215, 151, 25, 0.25) !important;
+  color: #432E14;
+}
+
+body.theme-dark ::selection {
+  background-color: rgba(244, 185, 67, 0.25) !important;
+  color: #EBDAC6;
+}
+
+/* ───────────────────────────────────────────────────────────────────────────
+   MARKDOWN SEMANTIC EMPHASIS (Scoped to [data-markdown-root])
+   ─────────────────────────────────────────────────────────────────────────── */
+
+/* Headings */
+[data-markdown-root] :is(h1, h2, h3, h4, h5, h6) {
+  color: var(--h-color) !important;
+  font-weight: 650 !important;
+  letter-spacing: -0.012em;
+}
+
+/* Primary Red Bold (**bold**) */
+[data-markdown-root] :is(strong, b) {
+  color: var(--bold-color) !important;
+  font-weight: 700 !important;
+}
+
+/* Primary Blue Italic (*italic*) */
+[data-markdown-root] :is(em, i:not(.codicon):not(.google-symbols)) {
+  color: var(--italic-color) !important;
+  font-style: italic !important;
+}
+
+/* Bold + Italic (***bold-italic***) */
+[data-markdown-root] :is(strong em, em strong, b i, i b) {
+  color: var(--bold-italic-color) !important;
+  font-weight: 700 !important;
+  font-style: italic !important;
+}
+
+/* Strikethrough (~~del~~) */
+[data-markdown-root] :is(del, s) {
+  color: var(--strikethrough-color) !important;
+  text-decoration-color: color-mix(in srgb, var(--strikethrough-color) 65%, transparent);
+}
+
+/* Links: Primary Yellow for Internal/Workspace Links, Vintage Green for External Links */
+[data-markdown-root] a {
+  color: var(--link-color) !important;
+  text-decoration: underline !important;
+  text-underline-offset: var(--link-underline-offset) !important;
+  text-decoration-thickness: var(--link-decoration-thickness) !important;
+  text-decoration-color: color-mix(in srgb, var(--link-color) var(--link-decoration-opacity), transparent) !important;
+  transition: color 120ms ease, text-decoration-color 120ms ease;
+}
+
+[data-markdown-root] a:hover {
+  color: var(--link-color-hover) !important;
+  text-decoration-color: color-mix(in srgb, var(--link-color-hover) 55%, transparent) !important;
+}
+
+[data-markdown-root] a[href^="http://"],
+[data-markdown-root] a[href^="https://"] {
+  color: var(--link-external-color) !important;
+  text-decoration-color: color-mix(in srgb, var(--link-external-color) var(--link-decoration-opacity), transparent) !important;
+}
+
+[data-markdown-root] a[href^="http://"]:hover,
+[data-markdown-root] a[href^="https://"]:hover {
+  color: var(--link-external-color-hover) !important;
+  text-decoration-color: color-mix(in srgb, var(--link-external-color-hover) 55%, transparent) !important;
+}
+
+/* Multi-colored Highlights (<mark>) */
+[data-markdown-root] mark {
+  color: var(--foreground) !important;
+  background-color: rgba(255, 187, 0, 0.24) !important;
+  padding: 0.08em 0.3em;
+  border-radius: 4px;
+}
+
+[data-markdown-root] strong mark,
+[data-markdown-root] mark strong {
+  background-color: rgba(240, 81, 108, 0.22) !important;
+  color: var(--bold-color) !important;
+}
+
+[data-markdown-root] em mark,
+[data-markdown-root] mark em {
+  background-color: rgba(42, 179, 192, 0.22) !important;
+  color: var(--italic-color) !important;
+}
+
+/* List Markers */
+[data-markdown-root] :is(ul, ol) > li::marker {
+  color: var(--muted-foreground) !important;
+  font-weight: 550;
+}
+
+/* Horizontal Divider */
+[data-markdown-root] hr {
+  border-color: var(--border) !important;
+  opacity: 0.85;
+}

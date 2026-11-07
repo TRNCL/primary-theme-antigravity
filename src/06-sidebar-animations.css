@@ -1,0 +1,180 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   06. SIDEBAR, RAINBOW FOLDERS/ITEMS & SPRING POPUP ANIMATIONS
+   User Preference #2: 6-Color Rainbow Cycle Enabled
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+@keyframes primarySlideUp {
+  0% {
+    transform: translateY(6px);
+    opacity: 0;
+  }
+  55% {
+    transform: translateY(-1.5px);
+    opacity: 0.92;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* ───────────────────────────────────────────────────────────────────────────
+   1. SIDEBAR ROW TACTILE ACTIVE STATE
+   ─────────────────────────────────────────────────────────────────────────── */
+body.theme-light {
+  --nav-active-shadow:
+    inset 0px 1px 0px 0px rgba(255, 255, 255, 0.85),
+    inset 0px 0px 0px 1px rgba(67, 46, 20, 0.11),
+    inset 0px -2px 0px 1px rgba(67, 46, 20, 0.08),
+    0px 2px 3px 0px rgba(67, 46, 20, 0.06);
+}
+
+body.theme-dark {
+  --nav-active-shadow:
+    inset 0px 1px 0px 0px rgba(235, 218, 198, 0.08),
+    inset 0px 0px 0px 1px rgba(0, 0, 0, 0.35),
+    inset 0px -2px 0px 1px rgba(0, 0, 0, 0.28),
+    0px 2px 4px 0px rgba(0, 0, 0, 0.26);
+}
+
+body[data-agy-theme] :is(.agy-sidebar-row, [data-testid="conversation-row-history"]) {
+  border-radius: 7px !important;
+  transition: background-color 140ms ease, box-shadow 140ms ease, transform 90ms ease !important;
+}
+
+body[data-agy-theme] :is(.agy-sidebar-row, [data-testid="conversation-row-history"]):active {
+  transform: translateY(1px);
+}
+
+body[data-agy-theme][data-newux-theme="onyx"] .agy-sidebar-row[data-selected="true"],
+body[data-agy-theme] [data-testid="conversation-row-history"][data-selected="true"] {
+  background-color: var(--onyx-selected) !important;
+  --row-bg: var(--onyx-selected) !important;
+  box-shadow: var(--nav-active-shadow) !important;
+}
+
+/* ───────────────────────────────────────────────────────────────────────────
+   2. 6-COLOR BAUHAUS RAINBOW SIDEBAR CYCLE (Red -> Orange -> Yellow -> Green -> Blue -> Purple)
+   Applies to Project Folder Headers & Conversation Rows in the Left Sidebar
+   ─────────────────────────────────────────────────────────────────────────── */
+
+/* Assign rainbow variables by data-index modulo 6 on virtualized sidebar items */
+[data-testid="conversation-list-sidebar"] [data-index$="0"],
+[data-testid="conversation-list-sidebar"] [data-index$="6"] {
+  --item-rainbow-fg: var(--rainbow-1-fg);
+  --item-rainbow-bg: var(--rainbow-1-bg);
+  --item-rainbow-bg-hover: var(--rainbow-1-bg-hover);
+}
+[data-testid="conversation-list-sidebar"] [data-index$="1"],
+[data-testid="conversation-list-sidebar"] [data-index$="7"] {
+  --item-rainbow-fg: var(--rainbow-2-fg);
+  --item-rainbow-bg: var(--rainbow-2-bg);
+  --item-rainbow-bg-hover: var(--rainbow-2-bg-hover);
+}
+[data-testid="conversation-list-sidebar"] [data-index$="2"],
+[data-testid="conversation-list-sidebar"] [data-index$="8"] {
+  --item-rainbow-fg: var(--rainbow-3-fg);
+  --item-rainbow-bg: var(--rainbow-3-bg);
+  --item-rainbow-bg-hover: var(--rainbow-3-bg-hover);
+}
+[data-testid="conversation-list-sidebar"] [data-index$="3"],
+[data-testid="conversation-list-sidebar"] [data-index$="9"] {
+  --item-rainbow-fg: var(--rainbow-4-fg);
+  --item-rainbow-bg: var(--rainbow-4-bg);
+  --item-rainbow-bg-hover: var(--rainbow-4-bg-hover);
+}
+[data-testid="conversation-list-sidebar"] [data-index$="4"] {
+  --item-rainbow-fg: var(--rainbow-5-fg);
+  --item-rainbow-bg: var(--rainbow-5-bg);
+  --item-rainbow-bg-hover: var(--rainbow-5-bg-hover);
+}
+[data-testid="conversation-list-sidebar"] [data-index$="5"] {
+  --item-rainbow-fg: var(--rainbow-6-fg);
+  --item-rainbow-bg: var(--rainbow-6-bg);
+  --item-rainbow-bg-hover: var(--rainbow-6-bg-hover);
+}
+
+/* Project / Folder Headers in Sidebar: Primary Rainbow Folder Look */
+[data-testid="conversation-list-sidebar"] [data-sidebar-section-drop-id]:not(:has([data-testid="section-header"])) > div {
+  border-radius: 7px !important;
+  margin-inline: 4px !important;
+  background-color: var(--item-rainbow-bg, transparent) !important;
+  color: var(--item-rainbow-fg, var(--secondary-foreground)) !important;
+  font-weight: 600 !important;
+  transition: background-color 140ms ease, box-shadow 140ms ease !important;
+}
+
+[data-testid="conversation-list-sidebar"] [data-sidebar-section-drop-id]:not(:has([data-testid="section-header"])) > div:hover {
+  background-color: var(--item-rainbow-bg-hover, var(--sidebar-muted)) !important;
+}
+
+[data-testid="conversation-list-sidebar"] [data-sidebar-section-drop-id]:not(:has([data-testid="section-header"])) .google-symbols {
+  color: var(--item-rainbow-fg, currentColor) !important;
+}
+
+/* Conversation Rows in Sidebar: Subtle Rainbow Left Pill Indicator & Hover Tint */
+[data-testid="conversation-list-sidebar"] .agy-sidebar-row::before {
+  content: "";
+  position: absolute;
+  left: 3px;
+  top: 24%;
+  bottom: 24%;
+  width: 3px;
+  border-radius: 999px;
+  background-color: var(--item-rainbow-fg, var(--primary));
+  opacity: 0.48;
+  transition: opacity 150ms ease, top 150ms ease, bottom 150ms ease, width 150ms ease;
+  pointer-events: none;
+}
+
+[data-testid="conversation-list-sidebar"] .agy-sidebar-row:hover::before {
+  opacity: 0.90;
+  top: 18%;
+  bottom: 18%;
+}
+
+[data-testid="conversation-list-sidebar"] .agy-sidebar-row[data-selected="true"]::before {
+  opacity: 1;
+  top: 15%;
+  bottom: 15%;
+  width: 3.5px;
+}
+
+[data-testid="conversation-list-sidebar"] .agy-sidebar-row:not([data-selected="true"]):hover {
+  background-color: var(--item-rainbow-bg, var(--sidebar-muted)) !important;
+}
+
+/* Eliminate the mismatched .agy-row-actions right-side background strip and use a true alpha mask on the title text */
+body[data-agy-theme] :is(.agy-sidebar-row, [data-testid="conversation-row-history"]) .agy-row-actions,
+body[data-agy-theme][data-newux-theme] :is(.agy-sidebar-row, [data-testid="conversation-row-history"]) .agy-row-actions {
+  background: transparent !important;
+  background-image: none !important;
+}
+
+body[data-agy-theme] :is(.agy-sidebar-row, [data-testid="conversation-row-history"]) .agy-row-actions::before,
+body[data-agy-theme][data-newux-theme] :is(.agy-sidebar-row, [data-testid="conversation-row-history"]) .agy-row-actions::before {
+  content: none !important;
+  display: none !important;
+  background: none !important;
+}
+
+body[data-agy-theme] :is(.agy-sidebar-row, [data-testid="conversation-row-history"]):is(:hover, :focus-within, :has(.agy-row-actions.opacity-100)) > div.grow.min-w-0 {
+  -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 68px), transparent calc(100% - 44px)) !important;
+  mask-image: linear-gradient(to right, #000 calc(100% - 68px), transparent calc(100% - 44px)) !important;
+}
+
+/* ───────────────────────────────────────────────────────────────────────────
+   3. POPUP, MENU & DIALOG ANIMATIONS
+   ─────────────────────────────────────────────────────────────────────────── */
+body[data-agy-theme] :is(.agy-overlay, .agy-fastpick, .agy-dialog) {
+  animation: primarySlideUp 220ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+body[data-agy-theme] .agy-overlay {
+  background-color: var(--card) !important;
+  border-color: var(--border) !important;
+  box-shadow:
+    inset 0 1px 0 var(--glass-highlight),
+    inset 0 0 0 1px var(--border),
+    0 10px 28px -6px rgba(0, 0, 0, 0.22) !important;
+}

@@ -1,0 +1,367 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   01. PRIMARY PALETTES & ANTIGRAVITY 2.0 ONYX VARIABLE OVERRIDES
+   Based on Primary for Obsidian (_classic-original.scss) by Cecilia May
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+:root {
+  --button-inset-shadow-size: 2px;
+  --button-axis-offset: 2px;
+  --button-radius: 8px;
+  --callout-shadow-offset: 4px;
+  --callout-content-shadow-blur: 3px;
+  --link-underline-offset: 2px;
+  --link-decoration-thickness: 1.5px;
+  --link-decoration-opacity: 28%;
+}
+
+/* ───────────────────────────────────────────────────────────────────────────
+   LIGHT MODE — Vintage Magazine Paper & Bauhaus Red Accent
+   ─────────────────────────────────────────────────────────────────────────── */
+html:has(body.theme-light),
+body.theme-light,
+body.theme-light[data-agy-theme],
+body.theme-light[data-agy-theme][data-newux-theme="onyx"] {
+  color-scheme: light !important;
+
+  /* Primary Light Grayscale (Warm Hue 31°–37°) */
+  --color-l-gray-10: #FCFAF8;
+  --color-l-gray-20: #F8F5F1;
+  --color-l-gray-30: #F2ECE3;
+  --color-l-gray-40: #EEE7DD;
+  --color-l-gray-50: #EAE0D2;
+  --color-l-gray-60: #E4D7C3;
+  --color-l-gray-70: #CBB393;
+  --color-l-gray-80: #B79D7B;
+  --color-l-gray-90: #9D8062;
+  --color-l-gray-100: #836B49;
+  --color-l-gray-110: #7B6242;
+  --color-l-gray-120: #655034;
+  --color-l-gray-130: #593E22;
+  --color-l-gray-140: #432E14;
+  --color-l-alpha-gray: rgba(203, 179, 147, 0.22);
+
+  /* Primary Light Chromatic Accents */
+  --color-l-red-10: #D9746D;
+  --color-l-red-20: #DF453A;
+  --color-l-red-30: #BF3F36;
+  --color-l-red-40: #992219;
+  --color-l-alpha-red: rgba(240, 81, 108, 0.18);
+
+  --color-l-orange-10: #E29B60;
+  --color-l-orange-20: #EA7A43;
+  --color-l-orange-30: #D75C28;
+  --color-l-orange-40: #AF3904;
+  --color-l-alpha-orange: rgba(255, 115, 0, 0.18);
+
+  --color-l-yellow-10: #E3C273;
+  --color-l-yellow-20: #ECB936;
+  --color-l-yellow-30: #D79719;
+  --color-l-yellow-40: #B67B02;
+  --color-l-alpha-yellow: rgba(255, 187, 0, 0.22);
+
+  --color-l-green-10: #8BBFA3;
+  --color-l-green-20: #3EB278;
+  --color-l-green-30: #329562;
+  --color-l-green-40: #1A7A4E;
+  --color-l-alpha-green: rgba(139, 190, 35, 0.18);
+
+  --color-l-blue-10: #64A4BA;
+  --color-l-blue-20: #2A90CB;
+  --color-l-blue-30: #22729B;
+  --color-l-blue-40: #094776;
+  --color-l-alpha-blue: rgba(42, 179, 192, 0.18);
+
+  --color-l-purple-10: #CAA6DC;
+  --color-l-purple-20: #9E73B9;
+  --color-l-purple-30: #744596;
+  --color-l-purple-40: #411782;
+  --color-l-alpha-purple: rgba(112, 122, 255, 0.18);
+
+  /* Antigravity 2.0 Core Surface & Text Variables */
+  --background: var(--color-l-gray-20) !important;
+  --content: var(--color-l-gray-20) !important;
+  --shell: var(--color-l-gray-40) !important;
+  --sidebar: var(--color-l-gray-40) !important;
+  --sidebar-secondary: var(--color-l-gray-60) !important;
+  --sidebar-muted: var(--color-l-gray-30) !important;
+
+  --card: var(--color-l-gray-10) !important;
+  --card-border: var(--color-l-gray-60) !important;
+  --border: var(--color-l-gray-60) !important;
+
+  --glass: var(--color-l-gray-10) !important;
+  --glass-border: var(--color-l-gray-60) !important;
+  --glass-highlight: rgba(255, 255, 255, 0.85) !important;
+  --scrim: rgba(67, 46, 20, 0.28) !important;
+
+  --secondary: var(--color-l-gray-30) !important;
+  --secondary-foreground: var(--color-l-gray-100) !important;
+  --muted: var(--color-l-gray-30) !important;
+  --muted-foreground: var(--color-l-gray-100) !important;
+  --placeholder: var(--color-l-gray-80) !important;
+
+  --foreground: var(--color-l-gray-130) !important;
+
+  /* User Preference #1: Bauhaus Red Primary Accent in Light Mode */
+  --primary: var(--color-l-red-30) !important;
+  --primary-foreground: var(--color-l-gray-10) !important;
+  --cta: var(--color-l-red-30) !important;
+  --cta-foreground: var(--color-l-gray-10) !important;
+
+  /* Onyx Design System Tokens */
+  --onyx-frame: var(--color-l-gray-30) !important;
+  --onyx-well: var(--color-l-gray-40) !important;
+  --onyx-raised: var(--color-l-gray-10) !important;
+  --onyx-selected: var(--color-l-gray-10) !important;
+  --onyx-key: var(--color-l-gray-10) !important;
+  --home-glow: rgba(215, 151, 25, 0.14) !important;
+
+  /* Semantic Status & Editor Tokens */
+  --error: var(--color-l-red-30) !important;
+  --warning: var(--color-l-orange-30) !important;
+  --success: var(--color-l-green-30) !important;
+  --link: var(--color-l-yellow-30) !important;
+  --code-foreground: var(--color-l-red-10) !important;
+
+  --focus-ring-color: rgba(191, 63, 54, 0.35) !important;
+  --focus-ring-offset-color: var(--color-l-gray-20) !important;
+  --nux-focus-ring: rgba(191, 63, 54, 0.5) !important;
+
+  /* Editor & Selection Overlays */
+  --editor-line-number-foreground: var(--color-l-gray-80) !important;
+  --editor-selection-background: var(--color-l-alpha-yellow) !important;
+  --editor-code-block-background: var(--color-l-gray-10) !important;
+  --editor-diff-inserted-line-background: rgba(50, 149, 98, 0.16) !important;
+  --editor-diff-removed-line-background: rgba(191, 63, 54, 0.16) !important;
+  --editor-diff-inserted-text-background: rgba(50, 149, 98, 0.28) !important;
+  --editor-diff-removed-text-background: rgba(191, 63, 54, 0.28) !important;
+  --bg-selection: rgba(215, 151, 25, 0.26) !important;
+  --bg-selection-overlay: rgba(215, 151, 25, 0.22) !important;
+  --bg-cursor-line: var(--color-l-gray-10) !important;
+  --fg-cursor: var(--color-l-gray-130) !important;
+
+  /* Charts & ReactTooltip */
+  --chart-blue: var(--color-l-blue-20) !important;
+  --chart-green: var(--color-l-green-30) !important;
+  --chart-purple: var(--color-l-purple-20) !important;
+  --chart-yellow: var(--color-l-yellow-30) !important;
+  --chart-orange: var(--color-l-orange-20) !important;
+  --chart-red: var(--color-l-red-20) !important;
+  --rt-color-dark: var(--color-l-gray-130) !important;
+  --rt-color-white: var(--color-l-gray-10) !important;
+
+  /* Primary Semantic Variables for Child Modules */
+  --bold-color: var(--color-l-red-30);
+  --italic-color: var(--color-l-blue-30);
+  --bold-italic-color: var(--color-l-gray-140);
+  --strikethrough-color: var(--color-l-gray-80);
+  --h-color: var(--color-l-gray-140);
+  --link-color: var(--color-l-yellow-30);
+  --link-color-hover: var(--color-l-yellow-20);
+  --link-external-color: var(--color-l-green-30);
+  --link-external-color-hover: var(--color-l-green-20);
+  --inline-code-color: var(--color-l-red-20);
+  --inline-code-bg: var(--color-l-gray-10);
+  --kbd-color: var(--color-l-red-20);
+  --kbd-bg: var(--color-l-gray-40);
+  --table-header-bg: var(--color-l-gray-30);
+  --table-row-alt-bg: rgba(242, 236, 227, 0.45);
+  --blockquote-bg: var(--color-l-gray-10);
+  --blockquote-border: var(--color-l-gray-70);
+
+  /* Rainbow Palette (6-color cycle) */
+  --rainbow-1-fg: var(--color-l-red-30);
+  --rainbow-1-bg: rgba(240, 81, 108, 0.12);
+  --rainbow-1-bg-hover: rgba(240, 81, 108, 0.20);
+  --rainbow-2-fg: var(--color-l-orange-30);
+  --rainbow-2-bg: rgba(255, 115, 0, 0.12);
+  --rainbow-2-bg-hover: rgba(255, 115, 0, 0.20);
+  --rainbow-3-fg: var(--color-l-yellow-40);
+  --rainbow-3-bg: rgba(255, 187, 0, 0.14);
+  --rainbow-3-bg-hover: rgba(255, 187, 0, 0.24);
+  --rainbow-4-fg: var(--color-l-green-40);
+  --rainbow-4-bg: rgba(50, 149, 98, 0.12);
+  --rainbow-4-bg-hover: rgba(50, 149, 98, 0.20);
+  --rainbow-5-fg: var(--color-l-blue-30);
+  --rainbow-5-bg: rgba(42, 144, 203, 0.12);
+  --rainbow-5-bg-hover: rgba(42, 144, 203, 0.20);
+  --rainbow-6-fg: var(--color-l-purple-30);
+  --rainbow-6-bg: rgba(116, 69, 150, 0.12);
+  --rainbow-6-bg-hover: rgba(116, 69, 150, 0.20);
+}
+
+/* ───────────────────────────────────────────────────────────────────────────
+   DARK MODE — Warm Cocoa Walnut & Bauhaus Yellow Accent
+   ─────────────────────────────────────────────────────────────────────────── */
+html:has(body.theme-dark),
+body.theme-dark,
+body.theme-dark[data-agy-theme],
+body.theme-dark[data-agy-theme][data-newux-theme="onyx"] {
+  color-scheme: dark !important;
+
+  /* Primary Dark Grayscale (Warm Hue 24°–35°) */
+  --color-d-gray-10: #EBDAC6;
+  --color-d-gray-20: #D7C0A3;
+  --color-d-gray-30: #C6AE93;
+  --color-d-gray-40: #AB916D;
+  --color-d-gray-50: #917959;
+  --color-d-gray-60: #6B553E;
+  --color-d-gray-70: #51402F;
+  --color-d-gray-80: #3B3026;
+  --color-d-gray-90: #342C22;
+  --color-d-gray-100: #2E261F;
+  --color-d-gray-110: #2A241E;
+  --color-d-gray-120: #26211C;
+  --color-d-gray-130: #211B17;
+  --color-d-gray-140: #1C1712;
+  --color-d-alpha-gray: rgba(145, 121, 89, 0.22);
+
+  /* Primary Dark Chromatic Accents */
+  --color-d-red-10: #FB8079;
+  --color-d-red-20: #F7685E;
+  --color-d-red-30: #F35044;
+  --color-d-red-40: #DE312B;
+  --color-d-alpha-red: rgba(243, 80, 68, 0.20);
+
+  --color-d-orange-10: #F08638;
+  --color-d-orange-20: #EB6A14;
+  --color-d-orange-30: #DA5E16;
+  --color-d-orange-40: #BD4C14;
+  --color-d-alpha-orange: rgba(235, 106, 20, 0.20);
+
+  --color-d-yellow-10: #F7D47E;
+  --color-d-yellow-20: #F5CA5B;
+  --color-d-yellow-30: #F4B943;
+  --color-d-yellow-40: #E3A02B;
+  --color-d-alpha-yellow: rgba(244, 185, 67, 0.22);
+
+  --color-d-green-10: #6CD19E;
+  --color-d-green-20: #50C38A;
+  --color-d-green-30: #38B275;
+  --color-d-green-40: #2B935E;
+  --color-d-alpha-green: rgba(80, 195, 138, 0.20);
+
+  --color-d-blue-10: #6EC0D6;
+  --color-d-blue-20: #4DB2D1;
+  --color-d-blue-30: #4197B9;
+  --color-d-blue-40: #387594;
+  --color-d-alpha-blue: rgba(77, 178, 209, 0.20);
+
+  --color-d-purple-10: #8A87D9;
+  --color-d-purple-20: #6663C2;
+  --color-d-purple-30: #514FB6;
+  --color-d-purple-40: #4441B4;
+  --color-d-alpha-purple: rgba(138, 135, 217, 0.20);
+
+  /* Antigravity 2.0 Core Surface & Text Variables */
+  --background: var(--color-d-gray-100) !important;
+  --content: var(--color-d-gray-100) !important;
+  --shell: var(--color-d-gray-120) !important;
+  --sidebar: var(--color-d-gray-120) !important;
+  --sidebar-secondary: var(--color-d-gray-80) !important;
+  --sidebar-muted: var(--color-d-gray-110) !important;
+
+  --card: var(--color-d-gray-110) !important;
+  --card-border: var(--color-d-gray-80) !important;
+  --border: var(--color-d-gray-80) !important;
+
+  --glass: var(--color-d-gray-110) !important;
+  --glass-border: var(--color-d-gray-80) !important;
+  --glass-highlight: rgba(235, 218, 198, 0.08) !important;
+  --scrim: rgba(15, 12, 9, 0.65) !important;
+
+  --secondary: var(--color-d-gray-90) !important;
+  --secondary-foreground: var(--color-d-gray-30) !important;
+  --muted: var(--color-d-gray-110) !important;
+  --muted-foreground: var(--color-d-gray-40) !important;
+  --placeholder: var(--color-d-gray-50) !important;
+
+  --foreground: var(--color-d-gray-20) !important;
+
+  /* User Preference #1: Bauhaus Yellow Primary Accent in Dark Mode */
+  --primary: var(--color-d-yellow-30) !important;
+  --primary-foreground: var(--color-d-gray-140) !important;
+  --cta: var(--color-d-yellow-30) !important;
+  --cta-foreground: var(--color-d-gray-140) !important;
+
+  /* Onyx Design System Tokens */
+  --onyx-frame: var(--color-d-gray-130) !important;
+  --onyx-well: var(--color-d-gray-130) !important;
+  --onyx-raised: var(--color-d-gray-110) !important;
+  --onyx-selected: var(--color-d-gray-80) !important;
+  --onyx-key: var(--color-d-gray-80) !important;
+  --home-glow: rgba(244, 185, 67, 0.11) !important;
+
+  /* Semantic Status & Editor Tokens */
+  --error: var(--color-d-red-30) !important;
+  --warning: var(--color-d-orange-20) !important;
+  --success: var(--color-d-green-20) !important;
+  --link: var(--color-d-yellow-20) !important;
+  --code-foreground: var(--color-d-red-20) !important;
+
+  --focus-ring-color: rgba(244, 185, 67, 0.38) !important;
+  --focus-ring-offset-color: var(--color-d-gray-100) !important;
+  --nux-focus-ring: rgba(244, 185, 67, 0.55) !important;
+
+  /* Editor & Selection Overlays */
+  --editor-line-number-foreground: var(--color-d-gray-50) !important;
+  --editor-selection-background: var(--color-d-alpha-yellow) !important;
+  --editor-code-block-background: var(--color-d-gray-130) !important;
+  --editor-diff-inserted-line-background: rgba(80, 195, 138, 0.16) !important;
+  --editor-diff-removed-line-background: rgba(243, 80, 68, 0.16) !important;
+  --editor-diff-inserted-text-background: rgba(80, 195, 138, 0.28) !important;
+  --editor-diff-removed-text-background: rgba(243, 80, 68, 0.28) !important;
+  --bg-selection: rgba(244, 185, 67, 0.24) !important;
+  --bg-selection-overlay: rgba(244, 185, 67, 0.20) !important;
+  --bg-cursor-line: var(--color-d-gray-90) !important;
+  --fg-cursor: var(--color-d-gray-20) !important;
+
+  /* Charts & ReactTooltip */
+  --chart-blue: var(--color-d-blue-20) !important;
+  --chart-green: var(--color-d-green-20) !important;
+  --chart-purple: var(--color-d-purple-10) !important;
+  --chart-yellow: var(--color-d-yellow-20) !important;
+  --chart-orange: var(--color-d-orange-20) !important;
+  --chart-red: var(--color-d-red-20) !important;
+  --rt-color-dark: var(--color-d-gray-140) !important;
+  --rt-color-white: var(--color-d-gray-10) !important;
+
+  /* Primary Semantic Variables for Child Modules */
+  --bold-color: var(--color-d-red-30);
+  --italic-color: var(--color-d-blue-20);
+  --bold-italic-color: var(--color-d-gray-10);
+  --strikethrough-color: var(--color-d-gray-50);
+  --h-color: var(--color-d-gray-10);
+  --link-color: var(--color-d-yellow-30);
+  --link-color-hover: var(--color-d-yellow-10);
+  --link-external-color: var(--color-d-green-20);
+  --link-external-color-hover: var(--color-d-green-10);
+  --inline-code-color: var(--color-d-red-20);
+  --inline-code-bg: var(--color-d-gray-130);
+  --kbd-color: var(--color-d-red-20);
+  --kbd-bg: var(--color-d-gray-80);
+  --table-header-bg: var(--color-d-gray-120);
+  --table-row-alt-bg: rgba(38, 33, 28, 0.55);
+  --blockquote-bg: var(--color-d-gray-120);
+  --blockquote-border: var(--color-d-gray-60);
+
+  /* Rainbow Palette (6-color cycle) */
+  --rainbow-1-fg: var(--color-d-red-20);
+  --rainbow-1-bg: rgba(243, 80, 68, 0.14);
+  --rainbow-1-bg-hover: rgba(243, 80, 68, 0.22);
+  --rainbow-2-fg: var(--color-d-orange-10);
+  --rainbow-2-bg: rgba(235, 106, 20, 0.14);
+  --rainbow-2-bg-hover: rgba(235, 106, 20, 0.22);
+  --rainbow-3-fg: var(--color-d-yellow-20);
+  --rainbow-3-bg: rgba(244, 185, 67, 0.14);
+  --rainbow-3-bg-hover: rgba(244, 185, 67, 0.22);
+  --rainbow-4-fg: var(--color-d-green-20);
+  --rainbow-4-bg: rgba(80, 195, 138, 0.14);
+  --rainbow-4-bg-hover: rgba(80, 195, 138, 0.22);
+  --rainbow-5-fg: var(--color-d-blue-20);
+  --rainbow-5-bg: rgba(77, 178, 209, 0.14);
+  --rainbow-5-bg-hover: rgba(77, 178, 209, 0.22);
+  --rainbow-6-fg: var(--color-d-purple-10);
+  --rainbow-6-bg: rgba(138, 135, 217, 0.14);
+  --rainbow-6-bg-hover: rgba(138, 135, 217, 0.22);
+}

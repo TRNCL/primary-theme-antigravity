@@ -1,0 +1,11 @@
+{
+  "primary-theme-autoload": {
+    "SessionStart": [
+      {
+        "type": "command",
+        "command": "node ./scripts/session-start-hook.mjs",
+        "timeout": 10
+      }
+    ]
+  }
+}

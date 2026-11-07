@@ -1,0 +1,152 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   04. CODE BLOCKS, INLINE CODE, KBD KEYCAPS & PRISM SYNTAX HIGHLIGHTING
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ───────────────────────────────────────────────────────────────────────────
+   1. PRISM SYNTAX PALETTE (--syntax-*)
+   ─────────────────────────────────────────────────────────────────────────── */
+body.theme-light {
+  --syntax-default-fg: #593E22 !important;
+  --syntax-comment: #B79D7B !important;
+  --syntax-punctuation: #836B49 !important;
+  --syntax-property: #22729B !important;
+  --syntax-deleted: #BF3F36 !important;
+  --syntax-inserted: #329562 !important;
+  --syntax-tag: #BF3F36 !important;
+  --syntax-constant: #744596 !important;
+  --syntax-number: #744596 !important;
+  --syntax-string: #D79719 !important;
+  --syntax-attr-name: #D75C28 !important;
+  --syntax-builtin: #329562 !important;
+  --syntax-operator: #D75C28 !important;
+  --syntax-variable: #593E22 !important;
+  --syntax-attr-value: #D79719 !important;
+  --syntax-keyword: #BF3F36 !important;
+  --syntax-function: #22729B !important;
+  --syntax-class-name: #D75C28 !important;
+  --syntax-regex: #329562 !important;
+}
+
+body.theme-dark {
+  --syntax-default-fg: #D7C0A3 !important;
+  --syntax-comment: #917959 !important;
+  --syntax-punctuation: #AB916D !important;
+  --syntax-property: #4DB2D1 !important;
+  --syntax-deleted: #F35044 !important;
+  --syntax-inserted: #50C38A !important;
+  --syntax-tag: #F35044 !important;
+  --syntax-constant: #8A87D9 !important;
+  --syntax-number: #8A87D9 !important;
+  --syntax-string: #F4B943 !important;
+  --syntax-attr-name: #EB6A14 !important;
+  --syntax-builtin: #50C38A !important;
+  --syntax-operator: #EB6A14 !important;
+  --syntax-variable: #D7C0A3 !important;
+  --syntax-attr-value: #F4B943 !important;
+  --syntax-keyword: #F35044 !important;
+  --syntax-function: #4DB2D1 !important;
+  --syntax-class-name: #EB6A14 !important;
+  --syntax-regex: #50C38A !important;
+}
+
+/* ───────────────────────────────────────────────────────────────────────────
+   2. INLINE CODE (`code:not(pre>code)`)
+   ─────────────────────────────────────────────────────────────────────────── */
+[data-markdown-root] code:not(pre > code) {
+  color: var(--inline-code-color) !important;
+  background-color: var(--inline-code-bg) !important;
+  border-radius: 5px !important;
+  padding: 0.14em 0.42em !important;
+  font-size: 0.88em !important;
+  font-weight: 500 !important;
+  box-shadow:
+    inset 0 0 0 1px var(--border),
+    inset 0 -1px 0 0 rgba(0, 0, 0, 0.06) !important;
+}
+
+/* ───────────────────────────────────────────────────────────────────────────
+   3. KEYBOARD SHORTCUT KEYCAPS (<kbd>)
+   ─────────────────────────────────────────────────────────────────────────── */
+kbd {
+  color: var(--kbd-color) !important;
+  background-color: var(--kbd-bg) !important;
+  border-radius: 5px !important;
+  padding: 0.12em 0.45em !important;
+  font-size: 0.84em !important;
+  font-weight: 600 !important;
+  border: none !important;
+  box-shadow:
+    inset 0px 1px 0px 0px rgba(255, 255, 255, 0.25),
+    inset 0px 0px 0px 1px rgba(0, 0, 0, 0.12),
+    inset 0px -2px 0px 0px rgba(0, 0, 0, 0.16),
+    0px 1px 2px rgba(0, 0, 0, 0.08) !important;
+}
+
+/* ───────────────────────────────────────────────────────────────────────────
+   4. FENCED CODE BLOCKS (`pre`, `.code-block`)
+   Fixes triple-nested box in Antigravity 2.0 (`<pre> > div.rounded-xl > div.p-3 > .code-block`)
+   ─────────────────────────────────────────────────────────────────────────── */
+
+/* Reset outer <pre> wrapper when it contains Antigravity's .rounded-xl card */
+[data-markdown-root] pre:has(> div.rounded-xl),
+[data-markdown-root] pre:has(.code-block) {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin-block: 0.5rem !important;
+  border-radius: 0 !important;
+}
+
+/* Unified Primary Card surface on the actual code block card container */
+body.theme-light [data-markdown-root] :is(pre > div.rounded-xl, div.rounded-xl:has(> .p-3 > .code-block)) {
+  background-color: var(--color-l-gray-10) !important;
+  border: none !important;
+  border-radius: 10px !important;
+  box-shadow: var(--primary-card-shadow) !important;
+  margin-block: 0 !important;
+  overflow: hidden !important;
+}
+
+body.theme-dark [data-markdown-root] :is(pre > div.rounded-xl, div.rounded-xl:has(> .p-3 > .code-block)) {
+  background-color: var(--color-d-gray-80) !important;
+  border: none !important;
+  border-radius: 10px !important;
+  box-shadow: var(--primary-card-shadow) !important;
+  margin-block: 0 !important;
+  overflow: hidden !important;
+}
+
+/* Language header bar at top of code block card */
+body.theme-light [data-markdown-root] :is(pre > div.rounded-xl, div.rounded-xl:has(> .p-3 > .code-block)) > div:first-child:not(.p-3) {
+  background-color: var(--color-l-gray-30) !important;
+  border-bottom: 1px solid var(--border) !important;
+  padding-inline: 0.75rem !important;
+}
+
+body.theme-dark [data-markdown-root] :is(pre > div.rounded-xl, div.rounded-xl:has(> .p-3 > .code-block)) > div:first-child:not(.p-3) {
+  background-color: var(--color-d-gray-70) !important;
+  border-bottom: 1px solid var(--border) !important;
+  padding-inline: 0.75rem !important;
+}
+
+/* Inner .p-3, .code-block, and .code-line must be transparent so no inner white box appears */
+[data-markdown-root] :is(pre > div.rounded-xl, div.rounded-xl:has(> .p-3 > .code-block)) :is(.p-3, .code-block, .code-line, .line-content) {
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  text-shadow: none !important;
+}
+
+/* Fallback for plain <pre> blocks without Antigravity's inner .rounded-xl card */
+body.theme-light [data-markdown-root] pre:not(:has(> div.rounded-xl)) {
+  background-color: var(--color-l-gray-10) !important;
+  border-radius: 10px !important;
+  box-shadow: var(--primary-card-shadow) !important;
+}
+
+body.theme-dark [data-markdown-root] pre:not(:has(> div.rounded-xl)) {
+  background-color: var(--color-d-gray-80) !important;
+  border-radius: 10px !important;
+  box-shadow: var(--primary-card-shadow) !important;
+}

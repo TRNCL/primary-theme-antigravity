@@ -1,0 +1,68 @@
+{
+  "themes": [
+    {
+      "id": "primary-bauhaus-light",
+      "label": "Primary Bauhaus (Light)",
+      "mode": "light",
+      "seeds": {
+        "background": "#F8F5F1",
+        "foreground": "#593E22",
+        "primary": "#BF3F36",
+        "primaryForeground": "#FAF8F5",
+        "codeForeground": "#402B15"
+      },
+      "syntax": {
+        "comment": "#BEB1A1",
+        "punctuation": "#775939",
+        "property": "#4B82BC",
+        "deleted": "#BF3F36",
+        "inserted": "#309359",
+        "tag": "#BF3F36",
+        "constant": "#E15826",
+        "number": "#E15826",
+        "string": "#DE981D",
+        "attrName": "#E15826",
+        "builtin": "#309359",
+        "operator": "#BF3F36",
+        "variable": "#593E22",
+        "attrValue": "#DE981D",
+        "keyword": "#BF3F36",
+        "function": "#9163CC",
+        "className": "#309359",
+        "regex": "#3D848F"
+      }
+    },
+    {
+      "id": "primary-bauhaus-dark",
+      "label": "Primary Bauhaus (Dark)",
+      "mode": "dark",
+      "seeds": {
+        "background": "#2E261F",
+        "foreground": "#D7C0A3",
+        "primary": "#F4B943",
+        "primaryForeground": "#191410",
+        "codeForeground": "#E4CEB2"
+      },
+      "syntax": {
+        "comment": "#584B3E",
+        "punctuation": "#B79C7A",
+        "property": "#6BA7DD",
+        "deleted": "#EA655D",
+        "inserted": "#4EB779",
+        "tag": "#EA655D",
+        "constant": "#EF8453",
+        "number": "#EF8453",
+        "string": "#F4B943",
+        "attrName": "#EF8453",
+        "builtin": "#4EB779",
+        "operator": "#EA655D",
+        "variable": "#D7C0A3",
+        "attrValue": "#F4B943",
+        "keyword": "#EA655D",
+        "function": "#AD86DF",
+        "className": "#4EB779",
+        "regex": "#60AFB7"
+      }
+    }
+  ]
+}

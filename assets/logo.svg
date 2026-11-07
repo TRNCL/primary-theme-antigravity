@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" fill="none">
+  <!-- 10% empty margin baked in (24px around a 208x208 3D tactile container) -->
+  <defs>
+    <filter id="cardDrop" x="16" y="16" width="224" height="228" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#432E14" flood-opacity="0.22"/>
+    </filter>
+    <filter id="blockDrop" x="0" y="0" width="256" height="256" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="3" stdDeviation="2.5" flood-color="#1C1712" flood-opacity="0.24"/>
+    </filter>
+  </defs>
+
+  <!-- Outer 3D Warm Oatmeal Base Block -->
+  <g filter="url(#cardDrop)">
+    <!-- Dark 3D bottom lip -->
+    <rect x="24" y="24" width="208" height="208" rx="44" fill="#C6B49D"/>
+    <!-- Main warm cream surface -->
+    <rect x="24" y="24" width="208" height="200" rx="44" fill="#FAF6F0"/>
+    <!-- Top specular highlight rim -->
+    <rect x="25.5" y="25.5" width="205" height="197" rx="42.5" stroke="#FFFFFF" stroke-width="3" stroke-opacity="0.85"/>
+    <!-- Outer 1.5px warm contour -->
+    <rect x="24.75" y="24.75" width="206.5" height="206.5" rx="43.25" stroke="#593E22" stroke-width="1.5" stroke-opacity="0.22"/>
+  </g>
+
+  <!-- Bauhaus Red 3D Toy Keycap (Top Left - Large) -->
+  <g filter="url(#blockDrop)">
+    <rect x="46" y="46" width="96" height="96" rx="22" fill="#8C2922"/>
+    <rect x="46" y="46" width="96" height="89" rx="22" fill="#BF3F36"/>
+    <path d="M56 50H132C136.418 50 140 53.5817 140 58V59C140 54.5817 136.418 51 132 51H56C51.5817 51 48 54.5817 48 59V58C48 53.5817 51.5817 50 56 50Z" fill="#FFFFFF" fill-opacity="0.32"/>
+    <text x="94" y="106" text-anchor="middle" fill="#FCFAF8" font-family="system-ui, -apple-system, sans-serif" font-weight="800" font-size="48">P</text>
+  </g>
+
+  <!-- Bauhaus Yellow 3D Toy Keycap (Top Right) -->
+  <g filter="url(#blockDrop)">
+    <rect x="154" y="46" width="56" height="96" rx="20" fill="#9E6B0D"/>
+    <rect x="154" y="46" width="56" height="89" rx="20" fill="#D79719"/>
+    <circle cx="182" cy="91" r="14" fill="#FCFAF8" fill-opacity="0.92"/>
+  </g>
+
+  <!-- Bauhaus Blue 3D Toy Keycap (Bottom Left) -->
+  <g filter="url(#blockDrop)">
+    <rect x="46" y="154" width="56" height="52" rx="18" fill="#164E6B"/>
+    <rect x="46" y="154" width="56" height="46" rx="18" fill="#22729B"/>
+  </g>
+
+  <!-- Bauhaus Green 3D Toy Keycap (Bottom Right - Wide) -->
+  <g filter="url(#blockDrop)">
+    <rect x="114" y="154" width="96" height="52" rx="18" fill="#206642"/>
+    <rect x="114" y="154" width="96" height="46" rx="18" fill="#329562"/>
+    <rect x="134" y="173" width="56" height="8" rx="4" fill="#FCFAF8" fill-opacity="0.9"/>
+  </g>
+</svg>

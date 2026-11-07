@@ -1,0 +1,18 @@
+{
+  "name": "primary-theme",
+  "displayName": "Primary Theme for Antigravity",
+  "description": "Port of Cecilia May's award-winning Primary for Obsidian theme to Antigravity 2.0 — warm nostalgia palette, Bauhaus Red/Yellow accents, 6-color rainbow sidebar, and 3D tactile toy keycap physics.",
+  "version": "1.1.0",
+  "logo": "assets/logo.svg",
+  "author": {
+    "name": "Community Port (Original Theme by Cecilia May)",
+    "url": "https://github.com/primary-theme/obsidian"
+  },
+  "homepage": "https://primary-theme.github.io/",
+  "repository": "https://github.com/TRNCL/primary-theme-antigravity",
+  "suggestedPrompts": [
+    "Apply Primary Theme to my current Antigravity 2.0 window",
+    "Enable Primary Theme automatic background injection on app launch",
+    "Remove Primary Theme and restore default Antigravity styling"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "name": "primary-theme-antigravity",
+  "version": "1.0.0",
+  "description": "Primary (Obsidian theme by Cecilia May) full port for Antigravity 2.0 (Plan C)",
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs",
+    "apply": "node primary-cli.mjs apply",
+    "watch": "node primary-cli.mjs watch",
+    "remove": "node primary-cli.mjs remove",
+    "autostart": "node primary-cli.mjs autostart",
+    "unautostart": "node primary-cli.mjs unautostart",
+    "patch:install": "node patch-app.mjs --install",
+    "patch:restore": "node patch-app.mjs --restore"
+  },
+  "author": "Ported from Primary for Obsidian by Cecilia May (GPL-3.0)",
+  "license": "GPL-3.0"
+}
