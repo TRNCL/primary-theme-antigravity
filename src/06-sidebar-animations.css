@@ -46,10 +46,12 @@ body[data-agy-theme] :is(.agy-sidebar-row, [data-testid="conversation-row-histor
   transform: translateY(1px);
 }
 
+body[data-agy-theme] :is(.agy-sidebar-row, [data-testid="conversation-row-history"])[data-selected="true"],
 body[data-agy-theme][data-newux-theme="onyx"] .agy-sidebar-row[data-selected="true"],
-body[data-agy-theme] [data-testid="conversation-row-history"][data-selected="true"] {
+body[data-agy-theme] [data-testid="conversation-list-sidebar"] :is(.agy-sidebar-row, [data-testid="conversation-row-history"])[data-selected="true"] {
   background-color: var(--onyx-selected) !important;
   --row-bg: var(--onyx-selected) !important;
+  border-color: transparent !important;
   box-shadow: var(--nav-active-shadow) !important;
 }
 

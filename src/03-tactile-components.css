@@ -399,19 +399,19 @@ body[data-agy-theme] :is(
 /* ───────────────────────────────────────────────────────────────────────────
    2. COMPOSER & TEXT INPUTS (.surface-composer, .agy-field, .agy-textarea)
    ─────────────────────────────────────────────────────────────────────────── */
-body[data-agy-theme][data-newux-theme="onyx"] .surface-composer {
+body[data-agy-theme] .surface-composer {
   background-color: var(--onyx-frame) !important;
   box-shadow: var(--primary-composer-frame-shadow) !important;
   border-radius: 16px !important;
 }
 
-body[data-agy-theme][data-newux-theme="onyx"] .surface-composer > .surface-composer-card {
+body[data-agy-theme] .surface-composer > .surface-composer-card {
   background-color: var(--card) !important;
   box-shadow: var(--primary-card-shadow) !important;
   border-radius: 14px !important;
 }
 
-body[data-agy-theme][data-newux-theme="onyx"] .surface-composer:focus-within > .surface-composer-card {
+body[data-agy-theme] .surface-composer:focus-within > .surface-composer-card {
   box-shadow:
     var(--primary-card-shadow),
     0 0 0 2px var(--focus-ring-color) !important;
@@ -477,7 +477,7 @@ body:is(.theme-light, .theme-dark)[data-agy-theme] :is(
 /* ───────────────────────────────────────────────────────────────────────────
    3. CHAT BUBBLES, CARDS, ARTIFACTS & DIALOGS
    ─────────────────────────────────────────────────────────────────────────── */
-body[data-agy-theme][data-newux-theme] :is(
+body[data-agy-theme] :is(
   .agy-user-bubble,
   .agy-card,
   .artifact-card,
@@ -489,7 +489,7 @@ body[data-agy-theme][data-newux-theme] :is(
   border-radius: 12px !important;
 }
 
-body[data-agy-theme][data-newux-theme] .artifact-card:hover {
+body[data-agy-theme] .artifact-card:hover {
   box-shadow: var(--primary-btn-shadow-hover) !important;
 }
 
@@ -644,9 +644,9 @@ body.theme-dark[data-agy-theme] :is(
    ─────────────────────────────────────────────────────────────────────────── */
 
 /* 1. Kill the protruding outer outline that gets clipped by overflow:hidden containers */
-body[data-agy-theme][data-newux-theme] :is(button, input, select, textarea, a, [tabindex]):focus-visible:not(.no-focus-ring),
-body[data-agy-theme][data-newux-theme] .focus-within-ring:focus-within:not(.no-focus-ring),
-body[data-agy-theme][data-newux-theme] .agy-button.no-focus-ring:focus-visible,
+body[data-agy-theme] :is(button, input, select, textarea, a, [tabindex]):focus-visible:not(.no-focus-ring),
+body[data-agy-theme] .focus-within-ring:focus-within:not(.no-focus-ring),
+body[data-agy-theme] .agy-button.no-focus-ring:focus-visible,
 body[data-agy-theme] :is(button, input, select, textarea, a, [tabindex]):focus-visible {
   outline: none !important;
   outline-offset: 0 !important;
@@ -655,7 +655,7 @@ body[data-agy-theme] :is(button, input, select, textarea, a, [tabindex]):focus-v
 }
 
 /* 2. Apply pure 3D Tactile Keycap elevation on focused buttons & controls (no colored ring) */
-body[data-agy-theme][data-newux-theme] :is(
+body[data-agy-theme] :is(
   button:not([class*="rounded-none"]):not([role="switch"]):not(.bg-primary):not(.agy-send-button):not([data-testid^="settings-nav-item-"]):not(.inline-pill):not([class*="inline-pill"]):not(.context-scope-mention *),
   a:not(.absolute):not([data-markdown-root] *):not(.context-scope-mention *),
   [role="button"]:not([data-markdown-root] *):not(.context-scope-mention *),
@@ -668,14 +668,14 @@ body[data-agy-theme][data-newux-theme] :is(
 }
 
 /* 3. Sidebar Conversation Row Link (<a class="absolute inset-0"> inside .agy-sidebar-row) */
-body[data-agy-theme][data-newux-theme] :is(.agy-sidebar-row, [data-testid="conversation-row-history"]) > a:focus-visible {
+body[data-agy-theme] :is(.agy-sidebar-row, [data-testid="conversation-row-history"]) > a:focus-visible {
   outline: none !important;
   box-shadow: var(--nav-active-shadow) !important;
   border-radius: 7px !important;
 }
 
 /* 4. Filled Accent Buttons (.agy-send-button, bg-primary, voice-live-pill) when keyboard focused */
-body[data-agy-theme][data-newux-theme] :is(
+body[data-agy-theme] :is(
   .agy-send-button:not(:disabled),
   button.bg-primary:not([role="switch"]):not(:disabled),
   button.proceed-button:not(:disabled)
@@ -685,7 +685,7 @@ body[data-agy-theme][data-newux-theme] :is(
 }
 
 /* 5. Toggle Switches ([role="switch"]) when keyboard focused */
-body[data-agy-theme][data-newux-theme] [role="switch"]:focus-visible {
+body[data-agy-theme] [role="switch"]:focus-visible {
   box-shadow: var(--primary-toggle-shadow) !important;
 }
 
